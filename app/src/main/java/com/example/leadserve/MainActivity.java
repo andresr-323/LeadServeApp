@@ -22,11 +22,8 @@ public class MainActivity extends AppCompatActivity implements asyncCallBack{
     }
 
     public void OnLogin(View view) {
-//        String username = UsernameEt.getText().toString();
-//        String password = PasswordEt.getText().toString();
-        //im doing this so you just have to click the login button for speedier login during debug phase
-        String password = "password";
-        String username = "ar06653@georgiasouthern.edu";
+        String username = UsernameEt.getText().toString();
+        String password = PasswordEt.getText().toString();
         String type = "login";
         loginCheck backgroundWorker = new loginCheck(this);
         backgroundWorker.execute(type, username, password);

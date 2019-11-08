@@ -33,7 +33,7 @@ public class loginCheck extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... params) {
         String type = params[0];
-        String login_url = "http://52.45.183.203:80/Android/mlog.php";
+        String login_url = "http://52.45.183.203:80/mlog.php";
         if(type.equals("login")) {
             try {
                 String email = params[1];
