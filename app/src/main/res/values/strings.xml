@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">LeadServe</string>
+    <string name="action_settings">Settings</string>
+    <string name="placeholderEmail">Enter Email</string>
+    <string name="placeholderPassword">Enter Password</string>
+    <string-array name="spinner_list_item_array">
+        <item>Homepage</item>
+        <item>Events</item>
+        <item>Progress</item>
+        <item>Messaging</item>
+        <item>My Information</item>
+    </string-array>
+    <string name="title_activity_messaging">MessagingActivity</string>
+</resources>
