@@ -7,7 +7,7 @@ public class Student implements Serializable {
     private String name;
     private int ID;
     private String email;
-    private int tierNumber;
+    private String tierNumber;
     private String advisor;
     private String campus;
     private String major;
@@ -45,11 +45,11 @@ public class Student implements Serializable {
         this.email = email;
     }
 
-    public int getTierNumber() {
+    public String getTierNumber() {
         return tierNumber;
     }
 
-    public void setTierNumber(int tierNumber) {
+    public void setTierNumber(String tierNumber) {
         this.tierNumber = tierNumber;
     }
 

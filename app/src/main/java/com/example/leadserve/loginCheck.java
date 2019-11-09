@@ -33,7 +33,7 @@ public class loginCheck extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... params) {
         String type = params[0];
-        String login_url = "http://52.45.183.203:80/mlog.php";
+        String login_url = "http://52.45.183.203:80/Android/mlog.php";
         if(type.equals("login")) {
             try {
                 String email = params[1];
@@ -79,8 +79,10 @@ public class loginCheck extends AsyncTask<String,Void,String> {
 
     @Override
     protected void onPostExecute(String result) {
-        if(result.equals("Success")){
+        String reg = "[0-9]+";
+        if(result.matches(reg)){
             Intent i = new Intent(this.context, Loading.class);
+            i.putExtra("ID", result);
             this.context.startActivity(i);
         }else if(result.equals("login not successful")){
             alertDialog.setMessage(result);

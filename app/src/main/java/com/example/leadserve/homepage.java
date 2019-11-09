@@ -31,7 +31,8 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class homepage extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
-    ArrayList<Student> Students = new ArrayList();
+    private ArrayList<Student> Students = new ArrayList();
+    private String ID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +42,12 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
-        Bundle b = getIntent().getExtras();
-        Students= (ArrayList<Student>) b.getSerializable("Stud");
-        String sa = "";
-        for(Student s: Students){
-            sa += s.toString();
-        }
-        Toast.makeText(this, sa, Toast.LENGTH_LONG).show();
+
+        Intent intent = getIntent();
+        ID = intent.getExtras().getString("ID");
+
+        Bundle studs = intent.getBundleExtra("STUDBUNDLE");
+        Students = (ArrayList<Student>) studs.getSerializable("STUD");
 
 
 
