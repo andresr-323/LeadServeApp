@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements asyncCallBack{
+public class MainActivity extends AppCompatActivity{
     TextView UsernameEt, PasswordEt;
     Button logBtn;
 
@@ -29,10 +29,6 @@ public class MainActivity extends AppCompatActivity implements asyncCallBack{
         String type = "login";
         loginCheck backgroundWorker = new loginCheck(this);
         backgroundWorker.execute(type, username, password);
-    }
-
-    public void done() {
-        this.finish();
     }
 
 }

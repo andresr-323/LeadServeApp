@@ -32,6 +32,7 @@ import java.util.ArrayList;
 
 public class homepage extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     private ArrayList<Student> Students = new ArrayList();
+    private ArrayList<Event> Events = new ArrayList();
     private String ID;
 
     @Override
@@ -48,8 +49,14 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
 
         Bundle studs = intent.getBundleExtra("STUDBUNDLE");
         Students = (ArrayList<Student>) studs.getSerializable("STUD");
+        Bundle events = intent.getBundleExtra("EVENTBUNDLE");
+        Events = (ArrayList<Event>) events.getSerializable("EVEN");
+        String lel = "";
+        for(Event e: Events){
+            lel += e.getTitle();
+        }
 
-
+        Toast.makeText(getApplicationContext(), lel, Toast.LENGTH_SHORT).show();
 
     }
     @Override
