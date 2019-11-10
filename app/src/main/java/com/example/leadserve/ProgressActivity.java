@@ -3,11 +3,14 @@ package com.example.leadserve;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,13 +25,16 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.ArrayList;
 
 public class ProgressActivity extends AppCompatActivity {
     private String ID;
+    private String tier;
     private final String URL = "http://52.45.183.203:80/";
     private tierOne t1 = new tierOne();
     private tierTwo t2 = new tierTwo();
     private tierThree t3 = new tierThree();
+    ListView lv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +45,7 @@ public class ProgressActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         ID = intent.getExtras().getString("ID");
+        tier = intent.getExtras().getString("tier");
 
         downloadprogressJSON(URL+"Android/mProg.php", ID);
     }
@@ -59,8 +66,17 @@ public class ProgressActivity extends AppCompatActivity {
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
+
                 try {
-                    loadTierOne(s);
+                    if(tier.equals("1"))
+                        loadTierOne(s);
+                    else if(tier.equals("2"))
+                        loadTierTwo(s);
+                    else if(tier.equals("3"))
+                        loadTierThree(s);
+                    else
+                        Log.d("error in loadtier: ", "tier not found");
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -111,6 +127,11 @@ public class ProgressActivity extends AppCompatActivity {
         t1.setShowcase(obj.getInt("Showcase"));
 
         Log.d("loadt1:", "load done");
+        ArrayList<tierOne> t = new ArrayList<>();
+        t.add(t1);
+        lv = findViewById(R.id.lvProg);
+        tierAdapter itemsAdapter = new tierAdapter(t, this);
+        lv.setAdapter(itemsAdapter);
 
     }
 
@@ -124,6 +145,11 @@ public class ProgressActivity extends AppCompatActivity {
         t2.setShowcase(obj.getInt("Showcase"));
 
         Log.d("loadt2:", "load done");
+        ArrayList<tierTwo> t = new ArrayList<>();
+        t.add(t2);
+        lv = findViewById(R.id.lvProg);
+        tierTwoAdapter itemsAdapter = new tierTwoAdapter(t, this);
+        lv.setAdapter(itemsAdapter);
 
     }
 
@@ -137,6 +163,11 @@ public class ProgressActivity extends AppCompatActivity {
         t3.setShowcase(obj.getInt("Showcase"));
 
         Log.d("loadt3:", "load done");
+        ArrayList<tierThree> t = new ArrayList<>();
+        t.add(t3);
+        lv = findViewById(R.id.lvProg);
+        tierThreeAdapter itemsAdapter = new tierThreeAdapter(t, this);
+        lv.setAdapter(itemsAdapter);
 
     }
 }

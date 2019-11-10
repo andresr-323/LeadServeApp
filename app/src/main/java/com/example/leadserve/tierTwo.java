@@ -1,12 +1,13 @@
 package com.example.leadserve;
 
-public class tierTwo {
+public class tierTwo extends tier  {
     private int fivehour;
     private int legacyProjectProp;
     private int LEAD2000;
     private int showcase;
 
     tierTwo(){
+        super();
 
     }
 

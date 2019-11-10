@@ -1133,6 +1133,7 @@ id listMode
 id list_item
 id listviewStuds
 id loginBtn
+id lvProg
 id masked
 id message
 id miSpinner
@@ -1205,6 +1206,14 @@ id src_in
 id src_over
 id standard
 id start
+id step1
+id step1complete
+id step2
+id step2complete
+id step3
+id step3complete
+id step4
+id step4complete
 id stretch
 id submenuarrow
 id submit_area
@@ -1221,6 +1230,7 @@ id text_input_password_toggle
 id textinput_counter
 id textinput_error
 id textinput_helper_text
+id tierText
 id time
 id title
 id titleDividerNoCustom
@@ -1313,6 +1323,9 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout list_tier
+layout list_tier2
+layout list_tier3
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout notification_action
