@@ -17,4 +17,8 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" />
 
+    <style name="spinnerTheme">
+        <item name="android:textColor">@color/SLgold</item>
+    </style>
+
 </resources>

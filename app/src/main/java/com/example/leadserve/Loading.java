@@ -26,6 +26,7 @@ import java.util.ArrayList;
 
 public class Loading extends AppCompatActivity {
     private String ID;
+    private String tier;
     public Intent i;
     public static ArrayList<Student> Students = new ArrayList<>();
     public static ArrayList<Event> Events = new ArrayList<>();
@@ -42,6 +43,7 @@ public class Loading extends AppCompatActivity {
 
         Intent ia = getIntent();
         ID = ia.getExtras().getString("ID");
+        tier = ia.getExtras().getString("tier");
 
         i = new Intent(Loading.this, homepage.class);
 
@@ -135,6 +137,7 @@ public class Loading extends AppCompatActivity {
         args.putSerializable("EVEN", Events);
         i.putExtra("EVENTBUNDLE",args);
         i.putExtra("ID", ID);
+        i.putExtra("tier", tier);
         startActivity(i);
         finish();
     }

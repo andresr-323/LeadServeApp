@@ -80,9 +80,13 @@ public class loginCheck extends AsyncTask<String,Void,String> {
     @Override
     protected void onPostExecute(String result) {
         String reg = "[0-9]+";
-        if(result.matches(reg)){
+
+        String s[] = result.split(" ");
+
+        if(s[0].matches(reg)){
             Intent i = new Intent(this.context, Loading.class);
-            i.putExtra("ID", result);
+            i.putExtra("ID", s[0]);
+            i.putExtra("tier", s[1]);
             this.context.startActivity(i);
         }else if(result.equals("login not successful")){
             alertDialog.setMessage(result);

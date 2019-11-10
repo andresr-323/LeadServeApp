@@ -24,6 +24,10 @@
         "source": "C:\\Users\\Rodriguez\\.gradle\\caches\\transforms-2\\files-2.1\\9ee5da6fca20f6f07dce6c73fc4ca33a\\material-1.0.0\\res\\interpolator\\mtrl_linear.xml"
     },
     {
+        "merged": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_spinner_item.xml.flat",
+        "source": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\src\\main\\res\\layout\\spinner_item.xml"
+    },
+    {
         "merged": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ratingbar_indicator_material.xml.flat",
         "source": "C:\\Users\\Rodriguez\\.gradle\\caches\\transforms-2\\files-2.1\\dfb17c32c9e1bced7bb89f3e844a7607\\appcompat-1.0.2\\res\\drawable\\abc_ratingbar_indicator_material.xml"
     },
@@ -424,6 +428,10 @@
         "source": "C:\\Users\\Rodriguez\\.gradle\\caches\\transforms-2\\files-2.1\\dfb17c32c9e1bced7bb89f3e844a7607\\appcompat-1.0.2\\res\\layout\\abc_screen_content_include.xml"
     },
     {
+        "merged": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_arrowdropdown.png.flat",
+        "source": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\src\\main\\res\\drawable-xxxhdpi\\arrowdropdown.png"
+    },
+    {
         "merged": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_design_ic_visibility.png.flat",
         "source": "C:\\Users\\Rodriguez\\.gradle\\caches\\transforms-2\\files-2.1\\9ee5da6fca20f6f07dce6c73fc4ca33a\\material-1.0.0\\res\\drawable-xhdpi-v4\\design_ic_visibility.png"
     },
@@ -804,6 +812,10 @@
         "source": "C:\\Users\\Rodriguez\\.gradle\\caches\\transforms-2\\files-2.1\\dfb17c32c9e1bced7bb89f3e844a7607\\appcompat-1.0.2\\res\\layout\\abc_list_menu_item_icon.xml"
     },
     {
+        "merged": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_arrowdropdown.png.flat",
+        "source": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\src\\main\\res\\drawable-hdpi\\arrowdropdown.png"
+    },
+    {
         "merged": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_seekbar_thumb_material.xml.flat",
         "source": "C:\\Users\\Rodriguez\\.gradle\\caches\\transforms-2\\files-2.1\\dfb17c32c9e1bced7bb89f3e844a7607\\appcompat-1.0.2\\res\\drawable\\abc_seekbar_thumb_material.xml"
     },
@@ -1152,6 +1164,10 @@
         "source": "C:\\Users\\Rodriguez\\.gradle\\caches\\transforms-2\\files-2.1\\dfb17c32c9e1bced7bb89f3e844a7607\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
+        "merged": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_spinner_dropdown_item.xml.flat",
+        "source": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\src\\main\\res\\layout\\spinner_dropdown_item.xml"
+    },
+    {
         "merged": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_icon_group.xml.flat",
         "source": "C:\\Users\\Rodriguez\\.gradle\\caches\\transforms-2\\files-2.1\\46da25c3e2ae6308b2227b660caa604d\\core-1.0.1\\res\\layout\\notification_template_icon_group.xml"
     },
@@ -1372,6 +1388,10 @@
         "source": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\src\\main\\res\\layout\\content_main.xml"
     },
     {
+        "merged": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_arrowdropdown.png.flat",
+        "source": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\src\\main\\res\\drawable-mdpi\\arrowdropdown.png"
+    },
+    {
         "merged": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_fade_out.xml.flat",
         "source": "C:\\Users\\Rodriguez\\.gradle\\caches\\transforms-2\\files-2.1\\dfb17c32c9e1bced7bb89f3e844a7607\\appcompat-1.0.2\\res\\anim\\abc_fade_out.xml"
     },
@@ -1526,6 +1546,10 @@
     {
         "merged": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\Rodriguez\\.gradle\\caches\\transforms-2\\files-2.1\\dfb17c32c9e1bced7bb89f3e844a7607\\appcompat-1.0.2\\res\\drawable-ldrtl-xxhdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_arrowdropdown.png.flat",
+        "source": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\src\\main\\res\\drawable-xxhdpi\\arrowdropdown.png"
     },
     {
         "merged": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_seekbar_track_material.xml.flat",
@@ -2010,6 +2034,10 @@
     {
         "merged": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_activity_chooser_view_list_item.xml.flat",
         "source": "C:\\Users\\Rodriguez\\.gradle\\caches\\transforms-2\\files-2.1\\dfb17c32c9e1bced7bb89f3e844a7607\\appcompat-1.0.2\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_arrowdropdown.png.flat",
+        "source": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\src\\main\\res\\drawable-xhdpi\\arrowdropdown.png"
     },
     {
         "merged": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",

@@ -25,8 +25,8 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="480dp"
+        android:layout_height="209dp"
+        android:layout_marginBottom="500dp"
         android:contentDescription="SL LOGO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

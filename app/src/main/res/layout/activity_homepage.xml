@@ -14,5 +14,23 @@
         android:background="#041E43"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:logo="@mipmap/leadserve_round" />
+        app:logo="@mipmap/leadserve_round"    >
+
+        <Spinner
+            android:id="@+id/navSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="end"
+            android:background="@null"
+            android:dropDownWidth="match_parent"
+            android:entries="@array/spinner_list_item_array"
+            android:spinnerMode="dropdown"
+            android:visibility="visible" />
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+
 </RelativeLayout>

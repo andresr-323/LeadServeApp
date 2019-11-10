@@ -4,7 +4,7 @@
     <string name="placeholderEmail">Enter Email</string>
     <string name="placeholderPassword">Enter Password</string>
     <string-array name="spinner_list_item_array">
-        <item>Homepage</item>
+        <item>Navigation</item>
         <item>Events</item>
         <item>Progress</item>
         <item>Messaging</item>

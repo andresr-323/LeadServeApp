@@ -1,5 +1,6 @@
 package com.example.leadserve;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.MenuItemCompat;
@@ -7,6 +8,7 @@ import androidx.core.view.MenuItemCompat;
 import android.app.ActionBar;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -30,11 +32,14 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class homepage extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+public class homepage extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private ArrayList<Student> Students = new ArrayList();
     private ArrayList<Event> Events = new ArrayList();
     private String ID;
+    public Spinner spinner;
+    private String tier;
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,68 +49,83 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
 
+        spinner = (Spinner) findViewById(R.id.navSpinner);
+
+        //ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.spinner_list_item_array, android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.spinner_list_item_array, R.layout.spinner_item);
+        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
+
+        spinner.setAdapter(adapter);
+
+        spinner.setOnItemSelectedListener(this);
+
+
         Intent intent = getIntent();
         ID = intent.getExtras().getString("ID");
+        tier = intent.getExtras().getString("tier");
 
         Bundle studs = intent.getBundleExtra("STUDBUNDLE");
         Students = (ArrayList<Student>) studs.getSerializable("STUD");
         Bundle events = intent.getBundleExtra("EVENTBUNDLE");
         Events = (ArrayList<Event>) events.getSerializable("EVEN");
-        String lel = "";
-        for(Event e: Events){
-            lel += e.getTitle();
-        }
 
-        Toast.makeText(getApplicationContext(), lel, Toast.LENGTH_SHORT).show();
+
+
 
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.menu_bar, menu);
-        getMenuInflater().inflate(R.menu.menu_bar, menu);
-        // get Spinner
-        MenuItem spinnerMenuItem = menu.findItem(R.id.miSpinner);
-        final Spinner spinner = (Spinner) MenuItemCompat.getActionView(spinnerMenuItem);
-        spinner.setOnItemSelectedListener(this);
-
-        // set Spinner Adapter
-        final ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this, R.array.spinner_list_item_array, android.R.layout.simple_spinner_dropdown_item);
-        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(spinnerAdapter);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu_bar, menu);
+//        // get Spinner
+////        MenuItem spinnerMenuItem = menu.findItem(R.id.miSpinner);
+////        final Spinner spinner = (Spinner) MenuItemCompat.getActionView(spinnerMenuItem);
+////        spinner.setOnItemSelectedListener(this);
+////
+////        // set Spinner Adapter
+////        final ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this, R.array.spinner_list_item_array, android.R.layout.simple_spinner_dropdown_item);
+////        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+////        spinner.setAdapter(spinnerAdapter);
+//        return true;
+//    }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String item = parent.getItemAtPosition(position).toString();
         Intent i;
+        Bundle args = new Bundle();
         switch (item) {
             case "Navigation":
                 //do nothing
                 break;
-            case "Homepage":
-                //do nothing
-                break;
             case "Events":
                 i = new Intent(homepage.this, EventsActivity.class);
+                args.putSerializable("EVENT", Events);
+                i.putExtra("EVENTBUNDLE",args);
                 startActivity(i);
-                Toast.makeText(this, "Events", Toast.LENGTH_SHORT).show();
+                spinner.setSelection(0);
                 break;
             case "Progress":
                 i = new Intent(homepage.this, ProgressActivity.class);
+                i.putExtra("ID", ID);
+                i.putExtra("tier", tier);
                 startActivity(i);
-                Toast.makeText(this, "Progress", Toast.LENGTH_SHORT).show();
+                spinner.setSelection(0);
                  break;
             case "Messaging":
                 i = new Intent(homepage.this, MessagingActivity.class);
+                args.putSerializable("STUD", Students);
+                i.putExtra("STUDBUNDLE",args);
+                i.putExtra("ID", ID);
+                i.putExtra("tier", tier);
                 startActivity(i);
-                Toast.makeText(this, "Messaging", Toast.LENGTH_SHORT).show();
+                spinner.setSelection(0);
                 break;
             case "My Information":
                 i = new Intent(homepage.this, MyInfoActivity.class);
+                i.putExtra("ID", ID);
                 startActivity(i);
-                Toast.makeText(this, "My Information", Toast.LENGTH_SHORT).show();
+                spinner.setSelection(0);
                 break;
             default:
                 break;
