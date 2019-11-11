@@ -123,6 +123,8 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
                 break;
             case "My Information":
                 i = new Intent(homepage.this, MyInfoActivity.class);
+                args.putSerializable("STUD", Students);
+                i.putExtra("STUDBUNDLE",args);
                 i.putExtra("ID", ID);
                 startActivity(i);
                 spinner.setSelection(0);

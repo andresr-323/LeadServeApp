@@ -22,10 +22,10 @@ public class MainActivity extends AppCompatActivity{
     }
 
     public void OnLogin(View view) {
-//        String username = UsernameEt.getText().toString();
-//        String password = PasswordEt.getText().toString();
-        String username = "ar06653@georgiasouthern.edu";
-        String password = "password";
+        String username = UsernameEt.getText().toString();
+        String password = PasswordEt.getText().toString();
+//        String username = "ar06653@georgiasouthern.edu";
+//        String password = "password";
         String type = "login";
         loginCheck backgroundWorker = new loginCheck(this);
         backgroundWorker.execute(type, username, password);

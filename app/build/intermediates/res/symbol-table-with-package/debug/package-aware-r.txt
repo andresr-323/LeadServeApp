@@ -1034,9 +1034,11 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
 id CTRL
+id Email
 id EventList
 id FUNCTION
 id META
+id Name
 id SHIFT
 id SYM
 id action_bar
@@ -1060,6 +1062,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id advisor
 id alertTitle
 id all
 id always
@@ -1141,6 +1144,7 @@ id list_item
 id listviewStuds
 id loginBtn
 id lvProg
+id major
 id masked
 id message
 id miSpinner
