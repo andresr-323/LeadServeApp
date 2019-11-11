@@ -24,6 +24,8 @@ public class MessagingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_messaging);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("Messaging");
+        toolbar.setTitleTextColor(getResources().getColor(R.color.SLgold));
         setSupportActionBar(toolbar);
 
         Intent intent = getIntent();

@@ -41,6 +41,8 @@ public class ProgressActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_progress);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("Progress");
+        toolbar.setTitleTextColor(getResources().getColor(R.color.SLgold));
         setSupportActionBar(toolbar);
 
         Intent intent = getIntent();

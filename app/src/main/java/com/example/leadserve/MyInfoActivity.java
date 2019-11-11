@@ -12,6 +12,9 @@ public class MyInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_info);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("My Information");
+        toolbar.setTitleTextColor(getResources().getColor(R.color.SLgold));
         setSupportActionBar(toolbar);
+
     }
 }
