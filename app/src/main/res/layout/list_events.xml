@@ -12,33 +12,33 @@
 
         <TextView
             android:id="@+id/eventTitle"
-            android:layout_width="167dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/eventLoc"
-            android:layout_width="167dp"
+            android:layout_width="133dp"
             android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/eventTime"
-            android:layout_width="167dp"
+            android:layout_width="138dp"
             android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/eventDate"
-            android:layout_width="167dp"
+            android:layout_width="135dp"
             android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/eventDesc"
-            android:layout_width="match_parent"
+            android:layout_width="138dp"
             android:layout_height="67dp" />
     </LinearLayout>
 
     <ImageView
         android:id="@+id/eventIMG"
-        android:layout_width="241dp"
-        android:layout_height="143dp" />
+        android:layout_width="270dp"
+        android:layout_height="146dp" />
 
 </LinearLayout>

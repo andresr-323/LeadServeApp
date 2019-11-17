@@ -1,9 +1,22 @@
 package com.example.leadserve;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.util.Log;
+
+import androidx.annotation.NonNull;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -20,6 +33,9 @@ import java.net.URLEncoder;
 public class loginCheck extends AsyncTask<String,Void,String> {
     Context context;
     AlertDialog alertDialog;
+    private String username;
+    private String pass;
+    private FirebaseAuth mAuth;
 //    private asyncCallBack mCallback;
 //
 //    public loginCheck(asyncCallBack callback, String x) {
@@ -27,8 +43,11 @@ public class loginCheck extends AsyncTask<String,Void,String> {
 //        mCallback = callback;
 //    }
 
-    loginCheck(Context ctx) {
+    loginCheck(Context ctx, String username, String pass) {
         context = ctx;
+        this.username = username;
+        this.pass = pass;
+
     }
     @Override
     protected String doInBackground(String... params) {
@@ -75,6 +94,8 @@ public class loginCheck extends AsyncTask<String,Void,String> {
     protected void onPreExecute() {
         alertDialog = new AlertDialog.Builder(context).create();
         alertDialog.setTitle("Login Status");
+
+        mAuth = FirebaseAuth.getInstance();
     }
 
     @Override
@@ -84,9 +105,23 @@ public class loginCheck extends AsyncTask<String,Void,String> {
         String s[] = result.split(" ");
 
         if(s[0].matches(reg)){
+            mAuth.createUserWithEmailAndPassword(username, pass);
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            mAuth.signInWithEmailAndPassword(username, pass);
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
             Intent i = new Intent(this.context, Loading.class);
             i.putExtra("ID", s[0]);
             i.putExtra("tier", s[1]);
+            i.putExtra("Name", s[2]+" "+s[3]);
             this.context.startActivity(i);
         }else if(result.equals("login not successful")){
             alertDialog.setMessage(result);

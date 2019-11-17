@@ -38,6 +38,7 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
     private String ID;
     public Spinner spinner;
     private String tier;
+    private String name;
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
@@ -64,6 +65,7 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
         Intent intent = getIntent();
         ID = intent.getExtras().getString("ID");
         tier = intent.getExtras().getString("tier");
+        name = intent.getExtras().getString("name");
 
         Bundle studs = intent.getBundleExtra("STUDBUNDLE");
         Students = (ArrayList<Student>) studs.getSerializable("STUD");
@@ -112,15 +114,6 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
                 startActivity(i);
                 spinner.setSelection(0);
                  break;
-            case "Messaging":
-                i = new Intent(homepage.this, MessagingActivity.class);
-                args.putSerializable("STUD", Students);
-                i.putExtra("STUDBUNDLE",args);
-                i.putExtra("ID", ID);
-                i.putExtra("tier", tier);
-                startActivity(i);
-                spinner.setSelection(0);
-                break;
             case "My Information":
                 i = new Intent(homepage.this, MyInfoActivity.class);
                 args.putSerializable("STUD", Students);

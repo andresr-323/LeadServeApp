@@ -12,6 +12,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,11 +30,12 @@ import java.util.ArrayList;
 public class Loading extends AppCompatActivity {
     private String ID;
     private String tier;
+    private String name;
     public Intent i;
     public static ArrayList<Student> Students = new ArrayList<>();
     public static ArrayList<Event> Events = new ArrayList<>();
     private final String URL = "http://52.45.183.203:80/";
-    Handler handler = new Handler();
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +48,12 @@ public class Loading extends AppCompatActivity {
         Intent ia = getIntent();
         ID = ia.getExtras().getString("ID");
         tier = ia.getExtras().getString("tier");
-
+        name = ia.getExtras().getString("Name");
         i = new Intent(Loading.this, homepage.class);
 
         downloadstudentJSON(URL+"Android/mStud.php", URL+"Android/mEven.php");
     }
+
     @Override
     public void onBackPressed() {
     }
@@ -138,6 +143,7 @@ public class Loading extends AppCompatActivity {
         i.putExtra("EVENTBUNDLE",args);
         i.putExtra("ID", ID);
         i.putExtra("tier", tier);
+        i.putExtra("name", name);
         startActivity(i);
         finish();
     }

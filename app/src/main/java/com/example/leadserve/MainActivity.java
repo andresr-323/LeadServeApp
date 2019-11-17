@@ -8,9 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity{
     TextView UsernameEt, PasswordEt;
     Button logBtn;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,15 +22,16 @@ public class MainActivity extends AppCompatActivity{
         UsernameEt = findViewById(R.id.emailText);
         PasswordEt = findViewById(R.id.passText);
         logBtn = findViewById(R.id.loginBtn);
+
     }
 
     public void OnLogin(View view) {
-        String username = UsernameEt.getText().toString();
-        String password = PasswordEt.getText().toString();
-//        String username = "ar06653@georgiasouthern.edu";
-//        String password = "password";
+//        String username = UsernameEt.getText().toString();
+//        String password = PasswordEt.getText().toString();
+        String username = "ar06653@georgiasouthern.edu";
+        String password = "password";
         String type = "login";
-        loginCheck backgroundWorker = new loginCheck(this);
+        loginCheck backgroundWorker = new loginCheck(this, username, password);
         backgroundWorker.execute(type, username, password);
     }
 

@@ -9,12 +9,12 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:animationCache="false"
         android:background="#041E43"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:logo="@mipmap/leadserve_round"    >
+        app:logo="@mipmap/leadserve_round">
 
         <Spinner
             android:id="@+id/navSpinner"
@@ -30,7 +30,28 @@
             android:visibility="visible" />
     </androidx.appcompat.widget.Toolbar>
 
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="657dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="18dp">
 
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="71dp" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableLayout>
 
 
 </RelativeLayout>
