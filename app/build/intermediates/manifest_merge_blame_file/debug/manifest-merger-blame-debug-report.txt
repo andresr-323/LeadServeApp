@@ -47,17 +47,18 @@
 27-->C:\Users\ar06653.AD.000\StudioProjects\LeadServeApp\app\src\main\AndroidManifest.xml:14:9-40
 28        android:usesCleartextTraffic="true" >
 28-->C:\Users\ar06653.AD.000\StudioProjects\LeadServeApp\app\src\main\AndroidManifest.xml:15:9-44
-29        <activity android:name="com.example.leadserve.MyInfoActivity" />
-29-->C:\Users\ar06653.AD.000\StudioProjects\LeadServeApp\app\src\main\AndroidManifest.xml:16:9-61
-29-->C:\Users\ar06653.AD.000\StudioProjects\LeadServeApp\app\src\main\AndroidManifest.xml:16:19-49
-30        <activity
-30-->C:\Users\ar06653.AD.000\StudioProjects\LeadServeApp\app\src\main\AndroidManifest.xml:17:9-20:59
-31            android:name="com.example.leadserve.MessagingActivity"
-31-->C:\Users\ar06653.AD.000\StudioProjects\LeadServeApp\app\src\main\AndroidManifest.xml:18:13-46
-32            android:label="@string/title_activity_messaging"
-32-->C:\Users\ar06653.AD.000\StudioProjects\LeadServeApp\app\src\main\AndroidManifest.xml:19:13-61
-33            android:theme="@style/AppTheme.NoActionBar" />
-33-->C:\Users\ar06653.AD.000\StudioProjects\LeadServeApp\app\src\main\AndroidManifest.xml:20:13-56
+29        <activity android:name="com.example.leadserve.CreateRoomActivity" />
+29-->C:\Users\ar06653.AD.000\StudioProjects\LeadServeApp\app\src\main\AndroidManifest.xml:16:9-65
+29-->C:\Users\ar06653.AD.000\StudioProjects\LeadServeApp\app\src\main\AndroidManifest.xml:16:19-53
+30        <activity android:name="com.example.leadserve.MyInfoActivity" />
+30-->C:\Users\ar06653.AD.000\StudioProjects\LeadServeApp\app\src\main\AndroidManifest.xml:17:9-52
+30-->C:\Users\ar06653.AD.000\StudioProjects\LeadServeApp\app\src\main\AndroidManifest.xml:17:19-49
+31        <activity
+31-->C:\Users\ar06653.AD.000\StudioProjects\LeadServeApp\app\src\main\AndroidManifest.xml:18:9-20:64
+32            android:name="com.example.leadserve.MessagingActivity"
+32-->C:\Users\ar06653.AD.000\StudioProjects\LeadServeApp\app\src\main\AndroidManifest.xml:19:13-46
+33            android:label="@string/title_activity_messaging" />
+33-->C:\Users\ar06653.AD.000\StudioProjects\LeadServeApp\app\src\main\AndroidManifest.xml:20:13-61
 34        <activity android:name="com.example.leadserve.ProgressActivity" />
 34-->C:\Users\ar06653.AD.000\StudioProjects\LeadServeApp\app\src\main\AndroidManifest.xml:21:9-54
 34-->C:\Users\ar06653.AD.000\StudioProjects\LeadServeApp\app\src\main\AndroidManifest.xml:21:19-51

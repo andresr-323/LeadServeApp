@@ -27,11 +27,11 @@
         android:testOnly="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
+        <activity android:name="com.example.leadserve.CreateRoomActivity" />
         <activity android:name="com.example.leadserve.MyInfoActivity" />
         <activity
             android:name="com.example.leadserve.MessagingActivity"
-            android:label="@string/title_activity_messaging"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_messaging" />
         <activity android:name="com.example.leadserve.ProgressActivity" />
         <activity android:name="com.example.leadserve.EventsActivity" />
         <activity android:name="com.example.leadserve.Loading" />

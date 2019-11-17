@@ -22,6 +22,8 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -39,6 +41,7 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
     public Spinner spinner;
     private String tier;
     private String name;
+    private FloatingActionButton createRoom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,9 +69,22 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
         Bundle events = intent.getBundleExtra("EVENTBUNDLE");
         Events = (ArrayList<Event>) events.getSerializable("EVEN");
 
+        createRoom = findViewById(R.id.createRoom);
+
+        initUI();
 
 
 
+    }
+
+    private void initUI() {
+        createRoom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(homepage.this, CreateRoomActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
