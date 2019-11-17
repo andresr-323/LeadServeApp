@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity{
     public void OnLogin(View view) {
 //        String username = UsernameEt.getText().toString();
 //        String password = PasswordEt.getText().toString();
-        String username = "ar06653@georgiasouthern.edu";
+        String username = "andresrodriguez1337@gmail.com";
         String password = "password";
         String type = "login";
         loginCheck backgroundWorker = new loginCheck(this, username, password);

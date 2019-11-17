@@ -108,11 +108,11 @@ public class Loading extends AppCompatActivity {
                     String[] arr = new String[2];
                     arr[0] = sb.toString().trim();
                     arr[1] = sb2.toString().trim();
-                    try {
-                        Thread.sleep(2500);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+//                    try {
+//                        Thread.sleep(2500);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
                     return arr;
                 } catch (Exception e) {
                     return null;

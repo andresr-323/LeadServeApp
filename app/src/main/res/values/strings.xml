@@ -7,7 +7,6 @@
         <item>Navigation</item>
         <item>Events</item>
         <item>Progress</item>
-        <item>Messaging</item>
         <item>My Information</item>
     </string-array>
     <string name="title_activity_messaging">MessagingActivity</string>

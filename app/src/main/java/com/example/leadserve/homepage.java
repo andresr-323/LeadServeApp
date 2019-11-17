@@ -40,7 +40,6 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
     private String tier;
     private String name;
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,14 +50,9 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
         setSupportActionBar(toolbar);
 
         spinner = (Spinner) findViewById(R.id.navSpinner);
-
-        //ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.spinner_list_item_array, android.R.layout.simple_spinner_dropdown_item);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.spinner_list_item_array, R.layout.spinner_item);
-        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
-
         spinner.setAdapter(adapter);
-
         spinner.setOnItemSelectedListener(this);
 
 
@@ -79,15 +73,7 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
 //        getMenuInflater().inflate(R.menu.menu_bar, menu);
-//        // get Spinner
-////        MenuItem spinnerMenuItem = menu.findItem(R.id.miSpinner);
-////        final Spinner spinner = (Spinner) MenuItemCompat.getActionView(spinnerMenuItem);
-////        spinner.setOnItemSelectedListener(this);
-////
-////        // set Spinner Adapter
-////        final ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this, R.array.spinner_list_item_array, android.R.layout.simple_spinner_dropdown_item);
-////        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-////        spinner.setAdapter(spinnerAdapter);
+//
 //        return true;
 //    }
 
@@ -137,9 +123,9 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
 //    public boolean onOptionsItemSelected(MenuItem item) {
 //        switch (item.getItemId()) {
 //            // action with ID action_refresh was selected
-//            case R.id.action_refresh:
-//                Toast.makeText(this, "Refresh selected", Toast.LENGTH_SHORT).show();
-//                break;
+////            case R.id.action_refresh:
+////                Toast.makeText(this, "Refresh selected", Toast.LENGTH_SHORT).show();
+////                break;
 //            default:
 //                break;
 //        }

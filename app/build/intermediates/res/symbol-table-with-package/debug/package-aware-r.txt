@@ -1095,7 +1095,6 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
-id action_settings
 id action_text
 id actions
 id activity_chooser_view_content
@@ -1213,6 +1212,7 @@ id parent_matrix
 id passText
 id percent
 id pin
+id profile
 id progressBar
 id progress_circular
 id progress_horizontal
