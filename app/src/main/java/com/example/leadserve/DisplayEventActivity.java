@@ -38,11 +38,11 @@ public class DisplayEventActivity extends AppCompatActivity {
         //evImg = findViewById(R.id.displayEventImg);
 
         new DisplayEventActivity.DownloadImageTask((ImageView) findViewById(R.id.displayEventImg)).execute(sel.getImgPath());
-        title.setText(sel.getTitle());
-        date.setText(sel.getDate());
-        time.setText(sel.getTime());
+        title.setText("Event: " + sel.getTitle());
+        date.setText("Date: " + sel.getDate());
+        time.setText("Start time: " + sel.getTime());
         location.setText(sel.getCampus() + ": " +sel.getLocation());
-        desc.setText(sel.getDescription());
+        desc.setText("Description:\n" + sel.getDescription());
     }
 
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
@@ -70,44 +70,4 @@ public class DisplayEventActivity extends AppCompatActivity {
         }
     }
 
-    static void convert12(String str)
-    {
-// Get Hours
-        int h1 = (int)str.charAt(0) - '0';
-        int h2 = (int)str.charAt(1)- '0';
-
-        int hh = h1 * 10 + h2;
-
-        // Finding out the Meridien of time
-        // ie. AM or PM
-        String Meridien;
-        if (hh < 12) {
-            Meridien = "AM";
-        }
-        else
-            Meridien = "PM";
-
-        hh %= 12;
-
-        // Handle 00 and 12 case separately
-        if (hh == 0) {
-            System.out.print("12");
-
-            // Printing minutes and seconds
-            for (int i = 2; i < 8; ++i) {
-                System.out.print(str.charAt(i));
-            }
-        }
-        else {
-            System.out.print(hh);
-            // Printing minutes and seconds
-            for (int i = 2; i < 8; ++i) {
-                System.out.print(str.charAt(i));
-            }
-        }
-
-        // After time is printed
-        // cout Meridien
-        System.out.println(" "+Meridien);
-    }
 }

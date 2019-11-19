@@ -16,21 +16,37 @@
         android:theme="?attr/actionBarTheme"
         app:logo="@mipmap/leadserve_round" />
 
-    <ListView
-        android:id="@+id/lvProg"
-        android:layout_width="339dp"
-        android:layout_height="588dp"
+    <ExpandableListView
+        android:id="@+id/tierExpandableListView"
+        android:layout_width="match_parent"
+        android:layout_height="662dp"
         android:layout_below="@+id/toolbar"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
-        android:layout_marginBottom="2dp" />
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="0.5dp"
+        android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft" />
+
+<!--    <ListView-->
+<!--        android:id="@+id/lvProg"-->
+<!--        android:layout_width="339dp"-->
+<!--        android:layout_height="588dp"-->
+<!--        android:layout_below="@+id/toolbar"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentLeft="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginStart="2dp"-->
+<!--        android:layout_marginLeft="2dp"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:layout_marginEnd="2dp"-->
+<!--        android:layout_marginRight="2dp"-->
+<!--        android:layout_marginBottom="2dp" />-->
 
 </RelativeLayout>

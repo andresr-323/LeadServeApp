@@ -16,4 +16,13 @@
     <string name="hint_message_text">Type a message&#8230;</string>
     <string name="error_empty_message">Please enter a message</string>
     <string name="error_message_failed">Failed to send your message</string>
+    <string name="L1">LEAD 1000</string>
+    <string name="L2">LEAD 2000</string>
+    <string name="L3">LEAD 3000</string>
+    <string name="coaching">Coaching Program</string>
+    <string name="sCase">Southern Leaders Showcase</string>
+    <string name="fiveHour">Five Hours of Service Reflection</string>
+    <string name="Lprop">Legacy Project Proposal</string>
+    <string name="lProjectComp">Legacy Project Completion</string>
+    <string name="lPort">Leadership Portfolio</string>
 </resources>
