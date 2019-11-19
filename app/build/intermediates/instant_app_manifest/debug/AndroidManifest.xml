@@ -27,6 +27,7 @@
         android:testOnly="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
+        <activity android:name="com.example.leadserve.ChatRoomActivity" />
         <activity android:name="com.example.leadserve.CreateRoomActivity" />
         <activity android:name="com.example.leadserve.MyInfoActivity" />
         <activity

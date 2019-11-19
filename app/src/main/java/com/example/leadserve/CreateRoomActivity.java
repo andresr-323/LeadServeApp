@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -73,17 +74,18 @@ public class CreateRoomActivity extends AppCompatActivity {
                 new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
+                        String x = roomName.getText().toString();
+                        Intent intent = new Intent(CreateRoomActivity.this, ChatRoomActivity.class);
+                        intent.putExtra(ChatRoomActivity.CHAT_ROOM_ID, documentReference.getId());
+                        intent.putExtra(ChatRoomActivity.CHAT_ROOM_NAME, x);
+                        startActivity(intent);
                         finish();
                     }
                 },
                 new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(
-                                CreateRoomActivity.this,
-                                getString(R.string.error_empty_room),
-                                Toast.LENGTH_SHORT
-                        ).show();
+                        Toast.makeText(CreateRoomActivity.this, getString(R.string.error_empty_room), Toast.LENGTH_SHORT).show();
                     }
                 }
         );

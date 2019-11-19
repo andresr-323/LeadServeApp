@@ -4,6 +4,8 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.MenuItemCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ActionBar;
 import android.content.Intent;
@@ -23,6 +25,11 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,6 +40,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 public class homepage extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private ArrayList<Student> Students = new ArrayList();
@@ -42,6 +50,9 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
     private String tier;
     private String name;
     private FloatingActionButton createRoom;
+    private RecyclerView chatRooms;
+    private ChatRoomsAdapter adapter;
+    ChatRoomRepository chatRoomRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,13 +82,49 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
 
         createRoom = findViewById(R.id.createRoom);
 
+        chatRoomRepository = new ChatRoomRepository(FirebaseFirestore.getInstance());
+
         initUI();
 
-
+        getChatRooms();
 
     }
 
+    private void getChatRooms() {
+        chatRoomRepository.getRooms(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(QuerySnapshot snapshots, FirebaseFirestoreException e) {
+                if (e != null) {
+                    Log.e("MainActivity", "Listen failed.", e);
+                    return;
+                }
+
+                List<ChatRoom> rooms = new ArrayList<>();
+                for (QueryDocumentSnapshot doc : snapshots) {
+                    rooms.add(new ChatRoom(doc.getId(), doc.getString("from")));
+                }
+
+                adapter = new ChatRoomsAdapter(rooms, listener);
+                chatRooms.setAdapter(adapter);
+            }
+        });
+    }
+
+    ChatRoomsAdapter.OnChatRoomClickListener listener = new ChatRoomsAdapter.OnChatRoomClickListener() {
+        @Override
+        public void onClick(ChatRoom chatRoom) {
+            Intent intent = new Intent(homepage.this, ChatRoomActivity.class);
+            intent.putExtra(ChatRoomActivity.CHAT_ROOM_ID, chatRoom.getId());
+            intent.putExtra(ChatRoomActivity.CHAT_ROOM_NAME, chatRoom.getName());
+            intent.putExtra("name", name);
+            intent.putExtra("tier", tier);
+            startActivity(intent);
+        }
+    };
+
     private void initUI() {
+        chatRooms = findViewById(R.id.rooms);
+        chatRooms.setLayoutManager(new LinearLayoutManager(this));
         createRoom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
