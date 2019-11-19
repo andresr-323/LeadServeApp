@@ -3,23 +3,21 @@ package com.example.leadserve;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
-import org.json.JSONException;
+import com.google.firebase.auth.FirebaseAuth;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 
-public class MyInfoActivity extends AppCompatActivity {
+public class MyInfoActivity extends AppCompatActivity implements View.OnClickListener {
     private String ID;
     private ArrayList<Student> Students;
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,19 +39,32 @@ public class MyInfoActivity extends AppCompatActivity {
                 s = s1;
             }
         }
+        Button bt = findViewById(R.id.logoutBtn);
+        bt.setOnClickListener(this);
 
-        TextView Name = findViewById(R.id.Name);
-        TextView Email = findViewById(R.id.Email);
-        TextView Major = findViewById(R.id.major);
-        TextView Advisor  = findViewById(R.id.advisor);
+        TextView Name = findViewById(R.id.name);
+        TextView tier = findViewById(R.id.tier);
+        TextView advisor = findViewById(R.id.advisorInp);
+        TextView campus = findViewById(R.id.campusInp);
+        TextView major = findViewById(R.id.majorInp);
+        TextView grad = findViewById(R.id.gDateInp);
+        TextView town = findViewById(R.id.townInp);
 
-        Name.setText("Name: " + s.getName());
-        Email.setText("Email: " + s.getEmail());
-        Major.setText("Major: " + s.getMajor());
-        Advisor.setText("Advisor: " + s.getAdvisor());
+        Name.setText(s.getName());
+        tier.setText("Tier Number: " + s.getTierNumber());
+        advisor.setText(s.getAdvisor());
+        campus.setText(s.getCampus());
+        major.setText(s.getMajor());
+        grad.setText(s.getExpectedGrad());
+        town.setText(s.getHometown());
 
     }
 
 
-
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
 }

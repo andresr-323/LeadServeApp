@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:logo="@mipmap/leadserve" />
+        app:logo="@mipmap/sl_new_logo_round" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chats"

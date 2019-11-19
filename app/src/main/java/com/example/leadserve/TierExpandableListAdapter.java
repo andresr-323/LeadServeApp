@@ -47,6 +47,12 @@ public class TierExpandableListAdapter  extends BaseExpandableListAdapter {
         }
         TextView expandedListTextView = (TextView) convertView.findViewById(R.id.status);
         expandedListTextView.setText(expandedListText); //setting the status
+        if(expandedListText.equals("Complete")){
+            //context.getResources().getColor(android.R.color.holo_red_dark);
+            expandedListTextView.setTextColor(context.getResources().getColor(android.R.color.holo_green_light));
+        }else{
+            expandedListTextView.setTextColor(context.getResources().getColor(android.R.color.holo_red_dark));
+        }
         TextView expandedListTitle = (TextView) convertView.findViewById(R.id.tierChildTitle);  //to set the leftside title
         if(listPosition == 0){  //if it's tier one's sublist
             if(cnt == 0) {

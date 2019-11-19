@@ -11,10 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:animationCache="false"
-        android:background="#041E43"
+        android:background="@color/SLblue"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:logo="@mipmap/leadserve_round" />
+        app:logo="@mipmap/sl_new_logo_round" />
 
     <ExpandableListView
         android:id="@+id/tierExpandableListView"

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_bg"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
@@ -19,7 +19,7 @@
         android:layout_marginEnd="99dp"
         android:layout_marginRight="99dp"
         android:layout_marginBottom="370dp"
-        android:background="#A99260"
+        android:background="@color/SLgold"
         android:drawableLeft="@drawable/ic_lock_black_24dp"
         android:ems="10"
         android:hint="@string/placeholderPassword"
@@ -38,7 +38,7 @@
         android:layout_marginTop="275dp"
         android:layout_marginEnd="99dp"
         android:layout_marginRight="99dp"
-        android:background="#A99260"
+        android:background="@color/SLgold"
         android:drawableLeft="@drawable/ic_adb_black_24dp"
         android:ems="10"
         android:hint="@string/placeholderEmail"
@@ -59,7 +59,7 @@
         android:layout_marginEnd="99dp"
         android:layout_marginRight="99dp"
         android:layout_marginBottom="285dp"
-        android:background="#A99260"
+        android:background="@color/SLgold"
         android:hapticFeedbackEnabled="false"
         android:linksClickable="false"
         android:onClick="OnLogin"
@@ -68,4 +68,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passText" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="384dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintBottom_toTopOf="@+id/emailText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        app:srcCompat="@drawable/sl_vector" />
 </androidx.constraintlayout.widget.ConstraintLayout>

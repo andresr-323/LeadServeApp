@@ -1245,11 +1245,9 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
 id CTRL
-id Email
 id FUNCTION
 id META
 id NO_DEBUG
-id Name
 id SHIFT
 id SHOW_ALL
 id SHOW_PATH
@@ -1312,6 +1310,7 @@ id add
 id adjust_height
 id adjust_width
 id advisor
+id advisorInp
 id alertTitle
 id aligned
 id all
@@ -1331,6 +1330,8 @@ id blocking
 id bottom
 id bounce
 id buttonPanel
+id campus
+id campusInp
 id center
 id center_horizontal
 id center_vertical
@@ -1398,14 +1399,17 @@ id filled
 id fixed
 id flip
 id forever
+id gDateInp
 id ghost_view
 id gone
+id gradDate
 id graph
 id graph_wrap
 id group_divider
 id groups
 id home
 id homeAsUp
+id hometown
 id icon
 id icon_group
 id icon_only
@@ -1413,6 +1417,7 @@ id ifRoom
 id ignore
 id image
 id imageView
+id imageView2
 id info
 id invisible
 id italic
@@ -1434,7 +1439,9 @@ id listTitle
 id list_item
 id listviewStuds
 id loginBtn
+id logoutBtn
 id major
+id majorInp
 id masked
 id message
 id message_text
@@ -1445,6 +1452,7 @@ id motion_base
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
+id name
 id navSpinner
 id navigation_header_container
 id never
@@ -1562,6 +1570,7 @@ id text_input_password_toggle
 id textinput_counter
 id textinput_error
 id textinput_helper_text
+id tier
 id tierChildTitle
 id tierExpandableListView
 id tierListTitle
@@ -1576,6 +1585,7 @@ id toolbar4
 id top
 id topPanel
 id touch_outside
+id townInp
 id transitionToEnd
 id transitionToStart
 id transition_current_scene
