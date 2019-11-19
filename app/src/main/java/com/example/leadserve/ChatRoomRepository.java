@@ -47,7 +47,7 @@ public class ChatRoomRepository {
     public void getRooms(EventListener<QuerySnapshot> listener) {
         db.collection("channels")
 //                .whereEqualTo("chat_room_id", roomId)
-////                .orderBy("sent", Query.Direction.DESCENDING)
+////                .orderBy("sent", Query.Direction.DESCENDING)    these two lines are the ones that are for "indexing" if i remember correctly
                 .orderBy("name")
                 .addSnapshotListener(listener);
     }

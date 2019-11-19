@@ -135,6 +135,7 @@ public class Loading extends AppCompatActivity {
             e.setDate(obj.getString("date"));
             e.setTime(obj.getString("time"));
             e.setImgPath(obj.getString("pathName"));
+            e.setCampus(obj.getString("campus"));
             Events.add(e);
         }
         Log.d("loadEvents:", "load done");

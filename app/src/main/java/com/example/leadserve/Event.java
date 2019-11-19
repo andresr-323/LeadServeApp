@@ -17,6 +17,7 @@ public class Event implements Serializable {
     private String title;
     private String description;
     private String location;
+    private String campus;
     private String date;
     private Date de;
     private String time;
@@ -27,6 +28,14 @@ public class Event implements Serializable {
 
     Event(){
 
+    }
+
+    public String getCampus() {
+        return campus;
+    }
+
+    public void setCampus(String campus) {
+        this.campus = campus;
     }
 
     public int getEventID() {
