@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ChatRoomActivity"></activity>
+        <activity android:name=".DisplayEventActivity"></activity>
+        <activity android:name=".ChatRoomActivity" />
         <activity android:name=".CreateRoomActivity" />
         <activity android:name=".MyInfoActivity" />
         <activity

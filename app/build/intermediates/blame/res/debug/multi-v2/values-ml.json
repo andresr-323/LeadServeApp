@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\ar06653.AD.000.001\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ml\\values-ml.xml",
+            "outputFile": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ml\\values-ml.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ar06653.AD.000.001\\.gradle\\caches\\transforms-2\\files-2.1\\f2ea231d9b4cf03381bf79364ce36206\\jetified-play-services-basement-17.0.0\\res\\values-ml\\values.xml",
+                    "source": "C:\\Users\\Rodriguez\\.gradle\\caches\\transforms-2\\files-2.1\\cd30058b1ad732b1a4ac01f88af9f6f1\\jetified-play-services-basement-17.0.0\\res\\values-ml\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ar06653.AD.000.001\\.gradle\\caches\\transforms-2\\files-2.1\\c6ed24259e187418524151309c91ad64\\play-services-base-17.1.0\\res\\values-ml\\values.xml",
+                    "source": "C:\\Users\\Rodriguez\\.gradle\\caches\\transforms-2\\files-2.1\\c6ed24259e187418524151309c91ad64\\play-services-base-17.1.0\\res\\values-ml\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ar06653.AD.000.001\\.gradle\\caches\\transforms-2\\files-2.1\\f8ccfb448ba3545203b2c9319e236e39\\appcompat-1.1.0\\res\\values-ml\\values-ml.xml",
+                    "source": "C:\\Users\\Rodriguez\\.gradle\\caches\\transforms-2\\files-2.1\\f8ccfb448ba3545203b2c9319e236e39\\appcompat-1.1.0\\res\\values-ml\\values-ml.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -55,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ar06653.AD.000.001\\.gradle\\caches\\transforms-2\\files-2.1\\56b6cdfbd80af409835a31a4470c49f0\\core-1.1.0\\res\\values-ml\\values-ml.xml",
+                    "source": "C:\\Users\\Rodriguez\\.gradle\\caches\\transforms-2\\files-2.1\\56b6cdfbd80af409835a31a4470c49f0\\core-1.1.0\\res\\values-ml\\values-ml.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

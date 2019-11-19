@@ -1243,7 +1243,6 @@ drawable tooltip_frame_light
 id ALT
 id CTRL
 id Email
-id EventList
 id FUNCTION
 id META
 id NO_DEBUG
@@ -1386,6 +1385,8 @@ id eventTime
 id eventTitle
 id exitUntilCollapsed
 id expand_activities_button
+id expandableListView
+id expandedListItem
 id expanded_menu
 id fill
 id fill_horizontal
@@ -1426,6 +1427,7 @@ id line3
 id linear
 id linearLayout
 id listMode
+id listTitle
 id list_item
 id listviewStuds
 id loginBtn
@@ -1644,6 +1646,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_chat_room
 layout activity_create_room
+layout activity_display_event
 layout activity_events
 layout activity_homepage
 layout activity_loading
@@ -1672,6 +1675,8 @@ layout item_chat_received
 layout item_chat_room
 layout item_chat_sent
 layout list_events
+layout list_group
+layout list_item
 layout list_tier
 layout list_tier2
 layout list_tier3

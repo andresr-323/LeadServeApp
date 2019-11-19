@@ -8,16 +8,17 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar4"
-        android:layout_width="409dp"
-        android:layout_height="56dp"
+        android:layout_width="412dp"
+        android:layout_height="55dp"
         android:layout_marginBottom="92dp"
-        android:background="?attr/colorPrimary"
+        android:background="@color/SLblue"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toTopOf="@+id/chats"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:logo="@mipmap/leadserve" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chats"

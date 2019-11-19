@@ -1,0 +1,39 @@
+<changelist name="try_#2" date="1574134693841" recycled="false">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/try_#2/shelved.patch" />
+  <option name="DESCRIPTION" value="try #2" />
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/5.4.1/executionHistory/executionHistory.bin" />
+    <option name="AFTER_PATH" value=".gradle/5.4.1/executionHistory/executionHistory.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/try_#2/executionHistory.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/5.4.1/executionHistory/executionHistory.lock" />
+    <option name="AFTER_PATH" value=".gradle/5.4.1/executionHistory/executionHistory.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/try_#2/executionHistory.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/5.4.1/fileHashes/fileHashes.bin" />
+    <option name="AFTER_PATH" value=".gradle/5.4.1/fileHashes/fileHashes.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/try_#2/fileHashes.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/5.4.1/fileHashes/fileHashes.lock" />
+    <option name="AFTER_PATH" value=".gradle/5.4.1/fileHashes/fileHashes.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/try_#2/fileHashes.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="AFTER_PATH" value=".gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/try_#2/buildOutputCleanup.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/caches/build_file_checksums.ser" />
+    <option name="AFTER_PATH" value=".idea/caches/build_file_checksums.ser" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/try_#2/build_file_checksums.ser" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/caches/gradle_models.ser" />
+    <option name="AFTER_PATH" value=".idea/caches/gradle_models.ser" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/try_#2/gradle_models.ser" />
+  </binary>
+</changelist>

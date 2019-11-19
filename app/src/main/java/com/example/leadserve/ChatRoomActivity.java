@@ -52,6 +52,7 @@ public class ChatRoomActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chat_room);
         Toolbar tb = findViewById(R.id.toolbar4);
         setSupportActionBar(tb);
+        tb.setTitleTextColor(getResources().getColor(R.color.SLgold));
         chatRoomRepository = new ChatRoomRepository(FirebaseFirestore.getInstance());
 
         Bundle extras = getIntent().getExtras();
