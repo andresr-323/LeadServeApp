@@ -63,8 +63,9 @@ public class EventsActivity extends AppCompatActivity {
 //        lv.setAdapter(ed);
         //https://www.journaldev.com/9942/android-expandablelistview-example-tutorial used
         expandableListView = (ExpandableListView) findViewById(R.id.expandableListView);
-        if(expandableListDetail.isEmpty())
-        expandableListDetail = ExpandableListDataPump.getData(Events);
+        if(expandableListDetail == null) {
+            expandableListDetail = ExpandableListDataPump.getData(Events);
+        }
         expandableListTitle = new ArrayList<String>(expandableListDetail.keySet());
         expandableListAdapter = new CustomExpandableListAdapter(this, expandableListTitle, expandableListDetail);
         expandableListView.setAdapter(expandableListAdapter);
