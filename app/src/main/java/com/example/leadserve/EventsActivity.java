@@ -48,10 +48,6 @@ public class EventsActivity extends AppCompatActivity {
         toolbar.setTitle("Events");
         toolbar.setTitleTextColor(getResources().getColor(R.color.SLgold));
         setSupportActionBar(toolbar);
-        if (getSupportActionBar() != null){
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
-        }
 
         Intent intent = getIntent();
 
@@ -67,6 +63,7 @@ public class EventsActivity extends AppCompatActivity {
 //        lv.setAdapter(ed);
         //https://www.journaldev.com/9942/android-expandablelistview-example-tutorial used
         expandableListView = (ExpandableListView) findViewById(R.id.expandableListView);
+        if(expandableListDetail.isEmpty())
         expandableListDetail = ExpandableListDataPump.getData(Events);
         expandableListTitle = new ArrayList<String>(expandableListDetail.keySet());
         expandableListAdapter = new CustomExpandableListAdapter(this, expandableListTitle, expandableListDetail);
@@ -127,14 +124,7 @@ public class EventsActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // handle arrow click here
-        if (item.getItemId() == android.R.id.home) {
-            finish(); // close this activity and return to preview activity (if there is any)
-        }
-
-        return super.onOptionsItemSelected(item);
+    public void onBackPressed() {
+        finish();
     }
-
-
 }
