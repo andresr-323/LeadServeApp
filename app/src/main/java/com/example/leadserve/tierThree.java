@@ -5,6 +5,10 @@ public class tierThree extends tier {
     private int LEAD3000;
     private int leadershipPort;
     private int showcase;
+    private int LeadershipLegVerf;
+    private int LEADVerf;
+    private int portVerf;
+    private int showcaseVerf;
 
     tierThree(){
         super();
@@ -40,5 +44,37 @@ public class tierThree extends tier {
 
     public void setShowcase(int showcase) {
         this.showcase = showcase;
+    }
+
+    public int getLeadershipLegVerf() {
+        return LeadershipLegVerf;
+    }
+
+    public void setLeadershipLegVerf(int leadershipLegVerf) {
+        LeadershipLegVerf = leadershipLegVerf;
+    }
+
+    public int getLEADVerf() {
+        return LEADVerf;
+    }
+
+    public void setLEADVerf(int LEADVerf) {
+        this.LEADVerf = LEADVerf;
+    }
+
+    public int getPortVerf() {
+        return portVerf;
+    }
+
+    public void setPortVerf(int portVerf) {
+        this.portVerf = portVerf;
+    }
+
+    public int getShowcaseVerf() {
+        return showcaseVerf;
+    }
+
+    public void setShowcaseVerf(int showcaseVerf) {
+        this.showcaseVerf = showcaseVerf;
     }
 }

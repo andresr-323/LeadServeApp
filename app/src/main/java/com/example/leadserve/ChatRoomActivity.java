@@ -74,6 +74,11 @@ public class ChatRoomActivity extends AppCompatActivity {
         showChatMessages();
     }
 
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
+
     private void showChatMessages() {
         chatRoomRepository.getChats(roomId, new EventListener<QuerySnapshot>() {
             @Override

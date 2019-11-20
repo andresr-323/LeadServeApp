@@ -67,4 +67,9 @@ public class MyInfoActivity extends AppCompatActivity implements View.OnClickLis
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
 }

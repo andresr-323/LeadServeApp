@@ -5,6 +5,10 @@ public class tierTwo extends tier  {
     private int legacyProjectProp;
     private int LEAD2000;
     private int showcase;
+    private int fiveVerf;
+    private int legacyVerf;
+    private int LEADVerf;
+    private int showcaseVerf;
 
     tierTwo(){
         super();
@@ -41,5 +45,37 @@ public class tierTwo extends tier  {
 
     public void setShowcase(int showcase) {
         this.showcase = showcase;
+    }
+
+    public int getFiveVerf() {
+        return fiveVerf;
+    }
+
+    public void setFiveVerf(int fiveVerf) {
+        this.fiveVerf = fiveVerf;
+    }
+
+    public int getLegacyVerf() {
+        return legacyVerf;
+    }
+
+    public void setLegacyVerf(int legacyVerf) {
+        this.legacyVerf = legacyVerf;
+    }
+
+    public int getLEADVerf() {
+        return LEADVerf;
+    }
+
+    public void setLEADVerf(int LEADVerf) {
+        this.LEADVerf = LEADVerf;
+    }
+
+    public int getShowcaseVerf() {
+        return showcaseVerf;
+    }
+
+    public void setShowcaseVerf(int showcaseVerf) {
+        this.showcaseVerf = showcaseVerf;
     }
 }

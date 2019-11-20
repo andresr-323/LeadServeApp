@@ -10,7 +10,7 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="47dp"
+        android:layout_height="56dp"
         android:animationCache="false"
         android:background="@color/SLblue"
         android:minHeight="?attr/actionBarSize"
@@ -23,7 +23,6 @@
         android:layout_height="75dp"
         android:layout_marginTop="125dp"
         android:gravity="center"
-        android:text="TextView"
         android:textSize="46sp" />
 
     <TextView
@@ -31,7 +30,6 @@
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:gravity="center"
-        android:text="TextView"
         android:textSize="24sp" />
 
     <LinearLayout
@@ -51,8 +49,7 @@
             android:id="@+id/advisorInp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView" />
+            android:layout_weight="1" />
     </LinearLayout>
 
     <LinearLayout
@@ -72,8 +69,7 @@
             android:id="@+id/campusInp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView" />
+            android:layout_weight="1" />
 
     </LinearLayout>
 
@@ -94,8 +90,7 @@
             android:id="@+id/majorInp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView" />
+            android:layout_weight="1" />
     </LinearLayout>
 
     <LinearLayout
@@ -115,8 +110,7 @@
             android:id="@+id/gDateInp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView" />
+            android:layout_weight="1" />
     </LinearLayout>
 
     <LinearLayout
@@ -136,8 +130,7 @@
             android:id="@+id/townInp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView" />
+            android:layout_weight="1" />
     </LinearLayout>
 
     <Button

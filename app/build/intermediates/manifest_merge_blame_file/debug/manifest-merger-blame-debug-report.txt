@@ -34,8 +34,8 @@
 20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 20-->[androidx.core:core:1.1.0] C:\Users\Rodriguez\.gradle\caches\transforms-2\files-2.1\56b6cdfbd80af409835a31a4470c49f0\core-1.1.0\AndroidManifest.xml:24:18-86
 21        android:debuggable="true"
-22        android:icon="@mipmap/leadserve"
-22-->C:\Users\Rodriguez\StudioProjects\LeadServeApp\app\src\main\AndroidManifest.xml:10:9-41
+22        android:icon="@mipmap/sl_new_logo_round"
+22-->C:\Users\Rodriguez\StudioProjects\LeadServeApp\app\src\main\AndroidManifest.xml:10:9-49
 23        android:label="@string/app_name"
 23-->C:\Users\Rodriguez\StudioProjects\LeadServeApp\app\src\main\AndroidManifest.xml:11:9-41
 24        android:roundIcon="@mipmap/sl_new_logo_round"

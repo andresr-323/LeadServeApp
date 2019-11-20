@@ -45,6 +45,11 @@ public class DisplayEventActivity extends AppCompatActivity {
         desc.setText("Description:\n" + sel.getDescription());
     }
 
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
+
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         ImageView bmImage;
 

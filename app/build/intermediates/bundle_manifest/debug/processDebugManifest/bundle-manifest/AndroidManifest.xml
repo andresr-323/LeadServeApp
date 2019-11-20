@@ -19,7 +19,7 @@
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
-        android:icon="@mipmap/leadserve"
+        android:icon="@mipmap/sl_new_logo_round"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/sl_new_logo_round"
         android:supportsRtl="true"

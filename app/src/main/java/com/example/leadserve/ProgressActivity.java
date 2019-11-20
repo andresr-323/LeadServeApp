@@ -199,6 +199,9 @@ public class ProgressActivity extends AppCompatActivity {
         t1.setCoachingProgram(obj.getInt("CoachingProgram"));
         t1.setLEAD1000(obj.getInt("LEAD1000"));
         t1.setShowcase(obj.getInt("Showcase"));
+        t1.setCoachingVerf(obj.getInt("CoachingProgramVer"));
+        t1.setLEADVerf(obj.getInt("LEAD1000Ver"));
+        t1.setShowVer(obj.getInt("ShowcaseVer"));
 
         Log.d("loadt1:", "load done");
 //        ArrayList<tierOne> t = new ArrayList<>();
@@ -217,6 +220,10 @@ public class ProgressActivity extends AppCompatActivity {
         t2.setLegacyProjectProp(obj.getInt("LegacyProjectProposal"));
         t2.setLEAD2000(obj.getInt("LEAD2000"));
         t2.setShowcase(obj.getInt("Showcase"));
+        t2.setFiveVerf(obj.getInt("FiveHourServiceReflectionVer"));
+        t2.setLegacyVerf(obj.getInt("LegacyProjectProposalVer"));
+        t2.setLEADVerf(obj.getInt("LEAD2000Ver"));
+        t2.setShowcaseVerf(obj.getInt("ShowcaseVer"));
 
         Log.d("loadt2:", "load done");
 //        ArrayList<tierTwo> t = new ArrayList<>();
@@ -235,6 +242,10 @@ public class ProgressActivity extends AppCompatActivity {
         t3.setLEAD3000(obj.getInt("LEAD3000"));
         t3.setLeadershipPort(obj.getInt("LeadershipPortfolio"));
         t3.setShowcase(obj.getInt("Showcase"));
+        t3.setLeadershipLegVerf(obj.getInt("LeadershipLegacyProjectVer"));
+        t3.setLEADVerf(obj.getInt("LEAD3000Ver"));
+        t3.setPortVerf(obj.getInt("LeadershipPortfolioVer"));
+        t3.setShowcaseVerf(obj.getInt("ShowcaseVer"));
 
         Log.d("loadt3:", "load done");
 //        ArrayList<tierThree> t = new ArrayList<>();
@@ -297,5 +308,10 @@ public class ProgressActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }
