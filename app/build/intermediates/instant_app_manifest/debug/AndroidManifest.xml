@@ -28,8 +28,6 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
         <activity android:name="com.example.leadserve.DisplayEventActivity" />
-        <activity android:name="com.example.leadserve.ChatRoomActivity" />
-        <activity android:name="com.example.leadserve.CreateRoomActivity" />
         <activity android:name="com.example.leadserve.MyInfoActivity" />
         <activity
             android:name="com.example.leadserve.MessagingActivity"
@@ -38,6 +36,8 @@
         <activity android:name="com.example.leadserve.EventsActivity" />
         <activity android:name="com.example.leadserve.Loading" />
         <activity android:name="com.example.leadserve.homepage" />
+        <activity android:name="com.example.leadserve.NewChannelController" />
+        <activity android:name="com.example.leadserve.MessagesActivity" />
         <activity
             android:name="com.example.leadserve.MainActivity"
             android:label="@string/app_name" >

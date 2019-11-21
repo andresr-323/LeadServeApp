@@ -1338,6 +1338,7 @@ id center_horizontal
 id center_vertical
 id chain
 id chains
+id channelsTable
 id chat_message
 id chats
 id checkbox
@@ -1489,7 +1490,6 @@ id reverseSawtooth
 id right
 id right_icon
 id right_side
-id room_name
 id rooms
 id save_image_matrix
 id save_non_transition_alpha

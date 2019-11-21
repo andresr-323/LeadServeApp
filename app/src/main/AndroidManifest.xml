@@ -14,8 +14,6 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".DisplayEventActivity"></activity>
-        <activity android:name=".ChatRoomActivity" />
-        <activity android:name=".CreateRoomActivity" />
         <activity android:name=".MyInfoActivity" />
         <activity
             android:name=".MessagingActivity"
@@ -24,6 +22,8 @@
         <activity android:name=".EventsActivity" />
         <activity android:name=".Loading" />
         <activity android:name=".homepage" />
+        <activity android:name=".NewChannelController"/>
+        <activity android:name=".MessagesActivity"/>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">

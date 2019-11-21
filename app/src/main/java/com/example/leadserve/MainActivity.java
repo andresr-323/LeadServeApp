@@ -1,5 +1,6 @@
 package com.example.leadserve;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,11 @@ public class MainActivity extends AppCompatActivity{
     TextView UsernameEt, PasswordEt;
     Button logBtn;
     private FirebaseAuth mAuth;
+    private static Context context;
+
+    public static Context getContext(){
+        return context;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
