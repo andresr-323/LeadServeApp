@@ -13,7 +13,6 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -63,45 +62,52 @@ public class NewChannelController extends AppCompatActivity {
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
-                        TableRow head = new TableRow(NewChannelController.this);
-                        head.setId(j);
-                        head.setTag("Head");
+                        String docName = (String) document.get("name");
+                        System.out.println("docName "+docName);
+                        System.out.println("name " +name);
+                        if (docName.equals(name)) {
+                            System.out.println("self");
+                        }else{
+                            TableRow head = new TableRow(NewChannelController.this);
+                            head.setId(j);
+                            head.setTag("Head");
 
-                        head.setLayoutParams(new TableRow.LayoutParams(
-                                TableRow.LayoutParams.MATCH_PARENT,
-                                TableRow.LayoutParams.WRAP_CONTENT
-                        ));
+                            head.setLayoutParams(new TableRow.LayoutParams(
+                                    TableRow.LayoutParams.MATCH_PARENT,
+                                    TableRow.LayoutParams.WRAP_CONTENT
+                            ));
 
-                        System.out.println("document ID: " + document.getId());
-                        final TextView nameText = new TextView(NewChannelController.this);
-                        nameText.setId(i);
-                        nameText.setHeight(150);
-                        nameText.setTextSize(20);
-                        nameText.setTextColor(Color.BLACK);
-                        nameText.setPadding(30, 30, 0, 0);
-                        nameText.setText(document.get("name").toString());
-                        head.addView(nameText);
-                        if (i % 2 ==0){
-                            head.setBackgroundColor(Color.LTGRAY);
-                        } else{
-                            head.setBackgroundColor(Color.WHITE);
-                        }
-
-                        table.addView(head, new TableLayout.LayoutParams(TableLayout.LayoutParams.WRAP_CONTENT,
-                                TableLayout.LayoutParams.MATCH_PARENT));
-                        i++;
-                        j++;
-
-                        head.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                Map<String, Object> newChannel = new HashMap<>();
-                                newChannel.put("name", nameText.getText().toString());
-                                newChannel.put("from", name);
-                                Channel channel = new Channel(nameText.getText().toString(), name);
-                                db.collection("channels").add(channel);
+                            System.out.println("document ID: " + document.getId());
+                            final TextView nameText = new TextView(NewChannelController.this);
+                            nameText.setId(i);
+                            nameText.setHeight(150);
+                            nameText.setTextSize(20);
+                            nameText.setTextColor(Color.BLACK);
+                            nameText.setPadding(30, 30, 0, 0);
+                            nameText.setText(document.get("name").toString());
+                            head.addView(nameText);
+                            if (i % 2 == 0) {
+                                head.setBackgroundColor(Color.LTGRAY);
+                            } else {
+                                head.setBackgroundColor(Color.WHITE);
                             }
-                        });
+
+                            table.addView(head, new TableLayout.LayoutParams(TableLayout.LayoutParams.WRAP_CONTENT,
+                                    TableLayout.LayoutParams.MATCH_PARENT));
+                            i++;
+                            j++;
+
+                            head.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Map<String, Object> newChannel = new HashMap<>();
+                                    newChannel.put("name", nameText.getText().toString());
+                                    newChannel.put("from", name);
+                                    Channel channel = new Channel(nameText.getText().toString(), name);
+                                    db.collection("channels").add(channel);
+                                }
+                            });
+                        }
                     }
                 } else {
                     Log.d("error", "error fetching documents: ", task.getException());
@@ -109,8 +115,4 @@ public class NewChannelController extends AppCompatActivity {
             }
         });
     }
-
-
-
-
 }

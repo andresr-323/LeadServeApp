@@ -1,5 +1,4 @@
 package com.example.leadserve;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +13,7 @@ public class ChannelAdapter extends RecyclerView.Adapter<ChannelAdapter.ChannelV
     }
     private onChannelClickListener listener;
     private List<Channel> channels;
-
+    private String userName;
     @NonNull
     @Override
     public ChannelAdapter.ChannelViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -36,9 +35,10 @@ public class ChannelAdapter extends RecyclerView.Adapter<ChannelAdapter.ChannelV
         return channels.size();
     }
 
-    public ChannelAdapter(List<Channel> channels, onChannelClickListener listener){
+    public ChannelAdapter(List<Channel> channels, onChannelClickListener listener, String userName){
         this.channels = channels;
         this.listener = listener;
+        this.userName = userName;
     }
 
     class ChannelViewHolder extends RecyclerView.ViewHolder{
@@ -57,10 +57,20 @@ public class ChannelAdapter extends RecyclerView.Adapter<ChannelAdapter.ChannelV
 
         }
 
-        public void bind(Channel channel){
+        public void bind(Channel channel) {
             this.channel = channel;
-            name.setText(channel.getName());
+            System.out.println("name " + userName);
+            if (userName.equals(channel.getName())) {
+                System.out.println("to: " + channel.getName());
+                name.setText(channel.getFrom());
+            } else if (userName.equals(channel.getFrom())){
+                System.out.println("from: " + channel.getFrom());
+                name.setText(channel.getName());
+            } else {
+                name.setText(channel.getName());
+            }
         }
+
     }
 }
 

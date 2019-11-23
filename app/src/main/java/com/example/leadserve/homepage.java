@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -24,6 +25,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,6 +42,7 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
     private FloatingActionButton createRoom;
     private RecyclerView channelsRV;
     private ChannelAdapter adapter;
+    private List<Channel> channels = new ArrayList<>();
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     CollectionReference channelReference = db.collection("channels");
@@ -60,6 +65,7 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
         ID = intent.getExtras().getString("ID");
         tier = intent.getExtras().getString("tier");
         name = intent.getExtras().getString("name");
+        System.out.println("name " + name);
         getCurrentUserID();
 
         Bundle studs = intent.getBundleExtra("STUDBUNDLE");
@@ -68,11 +74,12 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
         Events = (ArrayList<Event>) events.getSerializable("EVEN");
 
         createRoom = findViewById(R.id.createRoom);
-
+        handleTierChannel();
         initUI();
         getChannels();
-
+       // setChannelName();
     }
+
     private void getChannels(){
         channelReference.addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
@@ -81,29 +88,31 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
                     Log.e("Main", "Listen for channels failed");
                     return;
                 }else{
-                    List<Channel> channels = new ArrayList<>();
                     for(QueryDocumentSnapshot document: queryDocumentSnapshots){
-                        System.out.println(document.get("name"));
-                        System.out.println(document.getId());
-                        System.out.println(document.get("from"));
-                        String name = "";
+                        String toName = "";
                         if(document.get("name") != null){
-                            name = document.get("name").toString();
+                            toName = document.get("name").toString();
                         }
                         String from = "";
                         if (document.get("from") != null) {
                             from = document.get("from").toString();
                         }
+                        //set tier channel
                         if (document.get("from") == null && document.get("name") == null){
                             String tier = document.get("tier").toString();
                             channels.add(new Channel((tier)));
-                        } else{
-                            channels.add(new Channel(document.getId(), name, from));
+                            //set sender
+                        } else if (toName.equals(name)){
+                            System.out.println("inside name");
+                            channels.add(new Channel(document.getId(), toName, from));
+                            //set recipient
+                        } else if (from.equals(name)){
+                            System.out.println("inside from");
+                            channels.add(new Channel(document.getId(), toName, from));
                         }
                     }
-                    adapter = new ChannelAdapter(channels, listener);
+                    adapter = new ChannelAdapter(channels, listener, name);
                     channelsRV.setAdapter(adapter);
-
                 }
             }
         });
@@ -117,6 +126,7 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
             intent.putExtra("from", channel.getFrom());
             intent.putExtra("id", channel.getId());
             intent.putExtra("userID", userID);
+            intent.putExtra("userName", name);
             System.out.println("channel id" + channel.getId());
             startActivity(intent);
 
@@ -200,6 +210,70 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    private void handleTierChannel(){
+        switch (tier){
+            case "1":
+                System.out.println("tier 1");
+                channelReference.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if(task.isSuccessful()){
+                            Channel channel = new Channel("Tier One");
+                            if(!channels.contains(channel)){
+                                System.out.println("not includes tier channel");
+                                channels.add(channel);
+                                adapter = new ChannelAdapter(channels, listener, name);
+                                channelsRV.setAdapter(adapter);
+                                if(channelReference.document().getId() == ""){
+                                    channelReference.document("Tier One").set("Tier One");
+                                }
+                            }
+                        }
+                    }
+                });
+                break;
+            case "2":
+                System.out.println("tier 2");
+                channelReference.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if(task.isSuccessful()){
+                            Channel channel = new Channel("Tier Two");
+                            if(!channels.contains(channel)){
+                                System.out.println("not includes tier channel");
+                                channels.add(channel);
+                                adapter = new ChannelAdapter(channels, listener, name);
+                                channelsRV.setAdapter(adapter);
+                                if(channelReference.document().getId() == ""){
+                                    System.out.println("create tier channel");
+                                    channelReference.document("Tier Two").set("Tier One");
+                                }
+                            }
+                        }
+                    }
+                });
+                break;
+            case "3":
+                channelReference.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if(task.isSuccessful()){
+                            Channel channel = new Channel("Tier Three");
+                            if(!channels.contains(channel)){
+                                channels.add(channel);
+                                adapter = new ChannelAdapter(channels, listener, name);
+                                channelsRV.setAdapter(adapter);
+                                if(channelReference.document().getId() == ""){
+                                    channelReference.document("Tier Three").set("Tier One");
+                                }
+                            }
+                        }
+                    }
+                });
+                break;
+        }
     }
 
 //    @Override

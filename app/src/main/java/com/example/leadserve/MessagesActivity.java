@@ -12,6 +12,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -37,17 +38,18 @@ public class MessagesActivity extends AppCompatActivity {
     private String userID = "";
     private RecyclerView messageView;
     private MessageAdapter adapter;
+    private String userName;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     CollectionReference channels = db.collection("channels");
     DocumentReference channel;
     CollectionReference thread;
     Context context;
+    Toolbar toolbar;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_room);
-        Toolbar toolbar = findViewById(R.id.toolbar4);
-        toolbar.setTitle("Messaging");
+        toolbar = findViewById(R.id.toolbar4);
         toolbar.setTitleTextColor(getResources().getColor(R.color.SLgold));
         setSupportActionBar(toolbar);
         context = getApplicationContext();
@@ -56,9 +58,12 @@ public class MessagesActivity extends AppCompatActivity {
         from = intent.getExtras().getString("from");
         name = intent.getExtras().getString("name");
         ID = intent.getExtras().getString("id");
+        System.out.println("ID " +ID);
         userID = intent.getExtras().getString("userID");
+        userName = intent.getExtras().getString("userName");
         channel = channels.document(ID);
         thread = channel.collection("thread");
+        setTitle();
 
         initUI();
         showMessages();
@@ -67,6 +72,28 @@ public class MessagesActivity extends AppCompatActivity {
 
     private void orderMessages(EventListener<QuerySnapshot> listener){
         thread.orderBy("created", Query.Direction.DESCENDING).addSnapshotListener(listener);
+    }
+
+    private void setTitle(){
+        channel.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()){
+                    System.out.println("set title");
+                    System.out.println("task result " +task.getResult());
+                    DocumentSnapshot document = task.getResult();
+                    if(!document.exists()){
+                        toolbar.setTitle(ID);
+                    }else{
+                        if(document.get("name").equals(userName)){
+                            toolbar.setTitle(from);
+                        }else{
+                            toolbar.setTitle(name);
+                        }
+                    }
+                }
+            }
+        });
     }
 
     private void getToId(){
