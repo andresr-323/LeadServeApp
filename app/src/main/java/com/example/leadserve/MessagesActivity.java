@@ -58,6 +58,7 @@ public class MessagesActivity extends AppCompatActivity {
         from = intent.getExtras().getString("from");
         name = intent.getExtras().getString("name");
         ID = intent.getExtras().getString("id");
+        toId = "";
         System.out.println("ID " +ID);
         userID = intent.getExtras().getString("userID");
         userName = intent.getExtras().getString("userName");
@@ -127,7 +128,6 @@ public class MessagesActivity extends AppCompatActivity {
                         String senderID = document.get("senderID").toString();
                         System.out.println("sender id " + senderID);
                         String senderName = document.get("senderName").toString();
-                        String toId = "";
                         if (document.get("toId") != null){
                             toId = document.get("toId").toString();
                         }
