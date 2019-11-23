@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,7 +27,6 @@ public class NewChannelController extends AppCompatActivity {
     TableLayout table;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     CollectionReference userReference = db.collection("user-info");
-    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     Context context;
     private String name;
     int i = 0;

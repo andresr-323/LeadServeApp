@@ -6518,7 +6518,7 @@ public final class R {
     public static final int listMode=0x7f0900c0;
     public static final int listTitle=0x7f0900c1;
     public static final int list_item=0x7f0900c2;
-    public static final int listviewStuds=0x7f0900c3;
+    public static final int listviewMessaging=0x7f0900c3;
     public static final int loginBtn=0x7f0900c4;
     public static final int logoutBtn=0x7f0900c5;
     public static final int major=0x7f0900c6;

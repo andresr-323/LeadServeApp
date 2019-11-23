@@ -1438,7 +1438,7 @@ int id linearLayout 0x7f0900bf
 int id listMode 0x7f0900c0
 int id listTitle 0x7f0900c1
 int id list_item 0x7f0900c2
-int id listviewStuds 0x7f0900c3
+int id listviewMessaging 0x7f0900c3
 int id loginBtn 0x7f0900c4
 int id logoutBtn 0x7f0900c5
 int id major 0x7f0900c6

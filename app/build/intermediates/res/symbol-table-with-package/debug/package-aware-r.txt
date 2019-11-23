@@ -1439,7 +1439,7 @@ id linearLayout
 id listMode
 id listTitle
 id list_item
-id listviewStuds
+id listviewMessaging
 id loginBtn
 id logoutBtn
 id major

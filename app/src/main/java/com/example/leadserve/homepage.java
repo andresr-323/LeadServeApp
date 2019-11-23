@@ -1,31 +1,22 @@
 package com.example.leadserve;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.app.ActionBar;
-import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.EventListener;
@@ -33,15 +24,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,6 +34,7 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
     public Spinner spinner;
     private String tier;
     private String name;
+    private String userID;
     private FloatingActionButton createRoom;
     private RecyclerView channelsRV;
     private ChannelAdapter adapter;
@@ -73,11 +56,11 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
-
         Intent intent = getIntent();
         ID = intent.getExtras().getString("ID");
         tier = intent.getExtras().getString("tier");
         name = intent.getExtras().getString("name");
+        getCurrentUserID();
 
         Bundle studs = intent.getBundleExtra("STUDBUNDLE");
         Students = (ArrayList<Student>) studs.getSerializable("STUD");
@@ -126,38 +109,6 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
         });
     }
 
-//    private void getChatRooms() {
-//        chatRoomRepository.getRooms(new EventListener<QuerySnapshot>() {
-//            @Override
-//            public void onEvent(QuerySnapshot snapshots, FirebaseFirestoreException e) {
-//                if (e != null) {
-//                    Log.e("MainActivity", "Listen failed.", e);
-//                    return;
-//                }
-//
-//                List<ChatRoom> rooms = new ArrayList<>();
-//                for (QueryDocumentSnapshot doc : snapshots) {
-//                    rooms.add(new ChatRoom(doc.getId(), doc.getString("from")));
-//                }
-//
-//                adapter = new ChatRoomsAdapter(rooms, listener);
-//                chatRooms.setAdapter(adapter);
-//            }
-//        });
-//    }
-
-//    ChatRoomsAdapter.OnChatRoomClickListener listener = new ChatRoomsAdapter.OnChatRoomClickListener() {
-//        @Override
-//        public void onClick(ChatRoom chatRoom) {
-//            Intent intent = new Intent(homepage.this, ChatRoomActivity.class);
-//            intent.putExtra(ChatRoomActivity.CHAT_ROOM_ID, chatRoom.getId());
-//            intent.putExtra(ChatRoomActivity.CHAT_ROOM_NAME, chatRoom.getName());
-//            intent.putExtra("name", name);
-//            intent.putExtra("tier", tier);
-//            startActivity(intent);
-//        }
-//    };
-
     ChannelAdapter.onChannelClickListener listener = new ChannelAdapter.onChannelClickListener() {
         @Override
         public void onClick(Channel channel) {
@@ -165,6 +116,8 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
             intent.putExtra("name", channel.getName());
             intent.putExtra("from", channel.getFrom());
             intent.putExtra("id", channel.getId());
+            intent.putExtra("userID", userID);
+            System.out.println("channel id" + channel.getId());
             startActivity(intent);
 
         }
@@ -224,6 +177,24 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
                 break;
         }
 
+    }
+
+    private void getCurrentUserID(){
+        db.collection("user-info").whereEqualTo("name", name).get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()){
+                            System.out.println("inside query");
+                            for (QueryDocumentSnapshot document : task.getResult()){
+                                userID = document.getId();
+                                System.out.println("userid "+userID);
+                            }
+                        }else{
+                            Log.e("Error", "Error getting user ID: ", task.getException());
+                        }
+                    }
+                });
     }
 
     @Override
