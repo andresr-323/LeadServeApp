@@ -15,9 +15,6 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".DisplayEventActivity"></activity>
         <activity android:name=".MyInfoActivity" />
-        <activity
-            android:name=".MessagingActivity"
-            android:label="@string/title_activity_messaging" />
         <activity android:name=".ProgressActivity" />
         <activity android:name=".EventsActivity" />
         <activity android:name=".Loading" />

@@ -50,25 +50,41 @@ public class EventsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Intent intent = getIntent();
-
+        tier = intent.getExtras().getString("tier");
         ID = intent.getExtras().getString("ID");
 
         Bundle studs = intent.getBundleExtra("EVENTBUNDLE");
         Events = (ArrayList<Event>) studs.getSerializable("EVENT");
+        // set the tier relevant events for students to view only their tier event
+        for(Event e: Events){
+            String[] t = e.getTiers();
+            if(t[0].equals(tier)){
+                relEvents.add(e);
+                continue;
+            }
+            if(t[1].equals(tier)){
+                relEvents.add(e);
+                continue;
+            }
+            if(t[2].equals(tier)){
+                relEvents.add(e);
+                continue;
+            }
+            if(t[0].equals("0") && t[1].equals("0") && t[2].equals("0")){
+                relEvents.add(e);
 
-        tier = intent.getExtras().getString("tier");
+            }
+        }
 
-//        ListView lv = findViewById(R.id.EventList);
-//        EventAdapter ed = new EventAdapter(Events, this);
-//        lv.setAdapter(ed);
         //https://www.journaldev.com/9942/android-expandablelistview-example-tutorial used
         expandableListView = (ExpandableListView) findViewById(R.id.expandableListView);
         if(expandableListDetail == null) {
-            expandableListDetail = ExpandableListDataPump.getData(Events);
+            expandableListDetail = ExpandableListDataPump.getData(relEvents);
         }
         expandableListTitle = new ArrayList<String>(expandableListDetail.keySet());
         expandableListAdapter = new CustomExpandableListAdapter(this, expandableListTitle, expandableListDetail);
         expandableListView.setAdapter(expandableListAdapter);
+        expandableListView.expandGroup(0);
         expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
 
             @Override
@@ -108,7 +124,7 @@ public class EventsActivity extends AppCompatActivity {
                 Event sel = new Event();
                 for(Event e: Events){
                     //selects the event clicked
-                    if(e.getTitle().equals(expandableListDetail.get(expandableListTitle.get(groupPosition)).get(childPosition))){
+                    if((e.getTitle() + "\t\t" + e.getDate()).equals(expandableListDetail.get(expandableListTitle.get(groupPosition)).get(childPosition))){
                         cnt++;
                         sel = e;
                     }

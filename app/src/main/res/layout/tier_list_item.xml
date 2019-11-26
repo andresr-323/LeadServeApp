@@ -6,13 +6,17 @@
 
     <TextView
         android:id="@+id/tierChildTitle"
-        android:layout_width="211dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_width="151dp"
+        android:layout_height="35dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/status"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="14sp" />
 </LinearLayout>

@@ -21,9 +21,9 @@
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:layout_marginTop="125dp"
+        android:layout_marginTop="100dp"
         android:gravity="center"
-        android:textSize="46sp" />
+        android:textSize="42sp" />
 
     <TextView
         android:id="@+id/tier"

@@ -22,32 +22,37 @@
         android:layout_width="match_parent"
         android:layout_height="208dp"
         android:contentDescription="EventLogo"
-        app:srcCompat="@mipmap/sl_new_logo_foreground" />
+        app:srcCompat="@drawable/sl_vector" />
 
     <TextView
         android:id="@+id/displayTitle"
         android:layout_width="match_parent"
-        android:layout_height="30dp" />
+        android:layout_height="30dp"
+        android:gravity="center" />
 
     <TextView
         android:id="@+id/displayDate"
         android:layout_width="match_parent"
-        android:layout_height="30dp" />
+        android:layout_height="30dp"
+        android:gravity="center" />
 
     <TextView
         android:id="@+id/displayTime"
         android:layout_width="match_parent"
-        android:layout_height="30dp" />
+        android:layout_height="30dp"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/displayLocation"
         android:layout_width="match_parent"
-        android:layout_height="30dp" />
+        android:layout_height="30dp"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/displayDescription"
         android:layout_width="match_parent"
-        android:layout_height="200dp" />
+        android:layout_height="200dp"
+        android:gravity="center|top" />
 
 
 </LinearLayout>

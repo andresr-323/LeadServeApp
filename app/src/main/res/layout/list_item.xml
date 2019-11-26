@@ -2,11 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
     <TextView
         android:id="@+id/expandedListItem"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="38dp"
         android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"
         android:paddingTop="10dp"
-        android:paddingBottom="10dp" />
+        android:paddingBottom="10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="14sp" />
 </LinearLayout>

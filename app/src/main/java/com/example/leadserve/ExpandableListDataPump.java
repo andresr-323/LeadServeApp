@@ -27,7 +27,7 @@ public class ExpandableListDataPump {
 
             //now compare the dates using methods on Calendar
             if(cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR)) {
-                if((cal1.get(Calendar.MONTH) == cal2.get(Calendar.MONTH)) && (cal1.get(Calendar.MONTH) >= cal2.get(Calendar.MONTH))) {
+                if((cal1.get(Calendar.MONTH) == cal2.get(Calendar.MONTH)) && (cal1.get(Calendar.MONTH) >= cal2.get(Calendar.MONTH)) && cal1.get(Calendar.DAY_OF_MONTH) >= cal2.get(Calendar.DAY_OF_MONTH)) {
                     // the date falls in current month
                     up.add(e);
                 // || (cal1.get(Calendar.YEAR) >= cal2.get(Calendar.YEAR)) might beneeded incase future next semester event?
@@ -42,13 +42,13 @@ public class ExpandableListDataPump {
 
         List<String> upcoming = new ArrayList<String>();
         for (Event e: up) {
-            upcoming.add(e.getTitle());
+            upcoming.add(e.getTitle() + "\t\t" + e.getDate());
         }
 
 
         List<String> future = new ArrayList<String>();
         for (Event e: fut) {
-            future.add(e.getTitle());
+            future.add(e.getTitle() + "\t\t" + e.getDate());
         }
 
 

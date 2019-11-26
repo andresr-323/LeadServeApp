@@ -8,6 +8,7 @@
         <item>Events</item>
         <item>Progress</item>
         <item>My Information</item>
+        <item>Logout</item>
     </string-array>
     <string name="hint_create_room">Enter room name&#8230;</string>
     <string name="create_room">Create room</string>

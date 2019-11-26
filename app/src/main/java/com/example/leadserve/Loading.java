@@ -31,6 +31,7 @@ public class Loading extends AppCompatActivity {
     private String ID;
     private String tier;
     private String name;
+    private String vCode;
     public Intent i;
     public static ArrayList<Student> Students = new ArrayList<>();
     public static ArrayList<Event> Events = new ArrayList<>();
@@ -49,9 +50,10 @@ public class Loading extends AppCompatActivity {
         ID = ia.getExtras().getString("ID");
         tier = ia.getExtras().getString("tier");
         name = ia.getExtras().getString("Name");
+        vCode = ia.getExtras().getString("vCode");
         i = new Intent(Loading.this, homepage.class);
 
-        downloadstudentJSON(URL+"Android/mStud.php", URL+"Android/mEven.php");
+        downloadstudentJSON(URL+"Android/mStud.php?id="+vCode, URL+"Android/mEven.php?id="+vCode);
     }
 
     @Override
@@ -130,6 +132,7 @@ public class Loading extends AppCompatActivity {
             Event e = new Event();
             e.setEventID(obj.getInt("eventID"));
             e.setTitle(obj.getString("title"));
+            e.setTiers(obj.getString("tierNumber"));
             e.setDescription(obj.getString("description"));
             e.setLocation(obj.getString("location"));
             e.setDate(obj.getString("date"));
@@ -145,6 +148,7 @@ public class Loading extends AppCompatActivity {
         i.putExtra("ID", ID);
         i.putExtra("tier", tier);
         i.putExtra("name", name);
+        i.putExtra("vCode", vCode);
         startActivity(i);
         finish();
     }

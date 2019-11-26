@@ -29,9 +29,6 @@
         android:usesCleartextTraffic="true" >
         <activity android:name="com.example.leadserve.DisplayEventActivity" />
         <activity android:name="com.example.leadserve.MyInfoActivity" />
-        <activity
-            android:name="com.example.leadserve.MessagingActivity"
-            android:label="@string/title_activity_messaging" />
         <activity android:name="com.example.leadserve.ProgressActivity" />
         <activity android:name="com.example.leadserve.EventsActivity" />
         <activity android:name="com.example.leadserve.Loading" />

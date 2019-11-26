@@ -39,6 +39,7 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
     private String tier;
     private String name;
     private String userID;
+    private String vCode;
     private FloatingActionButton createRoom;
     private RecyclerView channelsRV;
     private ChannelAdapter adapter;
@@ -52,7 +53,8 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
         setContentView(R.layout.activity_homepage);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("");
+        toolbar.setTitle("Messaging");
+        toolbar.setTitleTextColor(getResources().getColor(R.color.SLgold));
         setSupportActionBar(toolbar);
 
         spinner = (Spinner) findViewById(R.id.navSpinner);
@@ -65,6 +67,7 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
         ID = intent.getExtras().getString("ID");
         tier = intent.getExtras().getString("tier");
         name = intent.getExtras().getString("name");
+        vCode = intent.getExtras().getString("vCode");
         System.out.println("name " + name);
         getCurrentUserID();
 
@@ -145,12 +148,12 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
             }
         });
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_bar, menu);
-
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu_bar, menu);
+//
+//        return true;
+//    }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -165,6 +168,7 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
                 i = new Intent(homepage.this, EventsActivity.class);
                 args.putSerializable("EVENT", Events);
                 i.putExtra("EVENTBUNDLE",args);
+                i.putExtra("tier", tier);
                 startActivity(i);
                 spinner.setSelection(0);
                 break;
@@ -172,6 +176,7 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
                 i = new Intent(homepage.this, ProgressActivity.class);
                 i.putExtra("ID", ID);
                 i.putExtra("tier", tier);
+                i.putExtra("vCode", vCode);
                 startActivity(i);
                 spinner.setSelection(0);
                  break;
@@ -182,6 +187,11 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
                 i.putExtra("ID", ID);
                 startActivity(i);
                 spinner.setSelection(0);
+                break;
+            case "Logout":
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 break;
             default:
                 break;

@@ -49,7 +49,7 @@ public class TierExpandableListAdapter  extends BaseExpandableListAdapter {
         expandedListTextView.setText(expandedListText); //setting the status
         if(expandedListText.equals("Complete")){
             //context.getResources().getColor(android.R.color.holo_red_dark);
-            expandedListTextView.setTextColor(context.getResources().getColor(android.R.color.holo_green_light));
+            expandedListTextView.setTextColor(context.getResources().getColor(R.color.complete));
         } else if(expandedListText.equals("Under Review")){
             expandedListTextView.setTextColor(context.getResources().getColor(R.color.caution));
         } else{

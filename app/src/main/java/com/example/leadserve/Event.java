@@ -23,6 +23,10 @@ public class Event implements Serializable {
     private String time;
     private int docID;
     private String imgPath;
+    private String t1;
+    private String t2;
+    private String t3;
+
 
     private final String URL = "http://52.45.183.203/eventImages/";
 
@@ -107,5 +111,49 @@ public class Event implements Serializable {
 
     public void setImgPath(String imgPath) {
         this.imgPath = URL + imgPath;
+    }
+
+    public void setTiers(String s){
+        String[] res;
+        res = s.split(", ");
+        if(res[0].equals("")){
+            this.t1 = "0";
+            this.t2 = "0";
+            this.t3 = "0";
+        }else {
+            int cnt = 0;
+            for (int i = 0; i < res.length; i++, cnt++) {
+                if (cnt == 0)
+                    this.t1 = res[0];
+                if (cnt == 1)
+                    this.t2 = res[1];
+                if (cnt == 2)
+                    this.t3 = res[2];
+            }
+        }
+    }
+
+    public String[] getTiers(){
+        String[] s = new String[3];
+        if(t1 != null){
+            s[0] = t1;
+            if(t2 != null){
+                s[1] = t2;
+                if(t3 !=null){
+                    s[2] = t3;
+                }else{
+                    s[2] = "0";
+                }
+            }else{
+                s[1] = "0";
+                s[2] = "0";
+            }
+        }else{
+            s[0] = "0";
+            s[1] = "0";
+            s[2] = "0";
+        }
+
+        return s;
     }
 }

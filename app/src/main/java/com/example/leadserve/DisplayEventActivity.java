@@ -1,6 +1,7 @@
 package com.example.leadserve;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -36,12 +37,15 @@ public class DisplayEventActivity extends AppCompatActivity {
         location = findViewById(R.id.displayLocation);
         desc = findViewById(R.id.displayDescription);
         //evImg = findViewById(R.id.displayEventImg);
+        Toolbar tb = findViewById(R.id.toolbar);
+        tb.setTitle(sel.getTitle());
+        tb.setTitleTextColor(getResources().getColor(R.color.SLgold));
 
         new DisplayEventActivity.DownloadImageTask((ImageView) findViewById(R.id.displayEventImg)).execute(sel.getImgPath());
         title.setText("Event: " + sel.getTitle());
         date.setText("Date: " + sel.getDate());
         time.setText("Start time: " + sel.getTime());
-        location.setText(sel.getCampus() + ": " +sel.getLocation());
+        location.setText(sel.getCampus() + ", " +sel.getLocation());
         desc.setText("Description:\n" + sel.getDescription());
     }
 
@@ -71,7 +75,11 @@ public class DisplayEventActivity extends AppCompatActivity {
         }
 
         protected void onPostExecute(Bitmap result) {
-            bmImage.setImageBitmap(result);
+            if(result == null){
+
+            }else {
+                bmImage.setImageBitmap(result);
+            }
         }
     }
 

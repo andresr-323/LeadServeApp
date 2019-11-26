@@ -38,6 +38,7 @@ import java.util.stream.Collectors;
 public class ProgressActivity extends AppCompatActivity {
     private String ID;
     private String tier;
+    private String vCode;
     private final String URL = "http://52.45.183.203:80/";
     private tierOne t1 = new tierOne();
     private tierTwo t2 = new tierTwo();
@@ -60,8 +61,9 @@ public class ProgressActivity extends AppCompatActivity {
         Intent intent = getIntent();
         ID = intent.getExtras().getString("ID");
         tier = intent.getExtras().getString("tier");
+        vCode = intent.getExtras().getString("vCode");
 
-        downloadprogressJSON(URL+"Android/mProg1.php",URL+"Android/mProg2.php" ,URL+"Android/mProg3.php" , ID);
+        downloadprogressJSON(URL+"Android/mProg1.php?verf="+vCode,URL+"Android/mProg2.php?verf="+vCode ,URL+"Android/mProg3.php?verf="+vCode , ID);
     }
 
 
@@ -274,9 +276,9 @@ public class ProgressActivity extends AppCompatActivity {
             @Override
             public void onGroupExpand(int groupPosition) {
                 //shows which dropdown has been selected and toggled/expanded
-                Toast.makeText(getApplicationContext(),
-                        expandableListTitle.get(groupPosition) + " List Expanded.",
-                        Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(),
+//                        expandableListTitle.get(groupPosition) + " List Expanded.",
+//                        Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -285,9 +287,9 @@ public class ProgressActivity extends AppCompatActivity {
             @Override
             public void onGroupCollapse(int groupPosition) {
                 //gives you the list that was uncollapsed
-                Toast.makeText(getApplicationContext(),
-                        expandableListTitle.get(groupPosition) + " List Collapsed.",
-                        Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(),
+//                        expandableListTitle.get(groupPosition) + " List Collapsed.",
+//                        Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -296,14 +298,14 @@ public class ProgressActivity extends AppCompatActivity {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                 //gives you the exact item in the collapsed list chosen
-                Toast.makeText(
-                        getApplicationContext(),
-                        expandableListTitle.get(groupPosition)
-                                + " -> "
-                                + expandableListDetail.get(
-                                expandableListTitle.get(groupPosition)).get(
-                                childPosition), Toast.LENGTH_SHORT
-                ).show();
+//                Toast.makeText(
+//                        getApplicationContext(),
+//                        expandableListTitle.get(groupPosition)
+//                                + " -> "
+//                                + expandableListDetail.get(
+//                                expandableListTitle.get(groupPosition)).get(
+//                                childPosition), Toast.LENGTH_SHORT
+//                ).show();
                 return false;
             }
         });
