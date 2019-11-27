@@ -82,7 +82,7 @@ public class loginCheck extends AsyncTask<String,Void,String> {
     @Override
     protected void onPreExecute() {
         alertDialog = new AlertDialog.Builder(context).create();
-        alertDialog.setTitle("Login Status");
+        alertDialog.setTitle("Login Status:");
 
         mAuth = FirebaseAuth.getInstance();
     }
@@ -113,8 +113,11 @@ public class loginCheck extends AsyncTask<String,Void,String> {
             i.putExtra("Name", s[2]+" "+s[3]);
             i.putExtra("vCode", s[4]);
             this.context.startActivity(i);
-        }else if(result.equals("login not successful")){
+        } else if(result.equals("login not successful")){
             alertDialog.setMessage(result);
+            alertDialog.show();
+        } else if(result.equals("archived")){
+            alertDialog.setMessage("Login to website to download certificates!\nApp is only for current in program students.");
             alertDialog.show();
         }else{
             alertDialog.setMessage("ERROR");

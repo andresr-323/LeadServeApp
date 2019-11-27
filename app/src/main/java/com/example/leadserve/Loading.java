@@ -141,7 +141,7 @@ public class Loading extends AppCompatActivity {
             e.setCampus(obj.getString("campus"));
             Events.add(e);
         }
-        Log.d("loadEvents:", "load done");
+        //Log.d("loadEvents:", "load done");
         Bundle args = new Bundle();
         args.putSerializable("EVEN", Events);
         i.putExtra("EVENTBUNDLE",args);
@@ -171,14 +171,10 @@ public class Loading extends AppCompatActivity {
             s.setTshirtSize(obj.getString("tshirtSize"));
             Students.add(s);
         }
-//        Intent i = new Intent(Loading.this, homepage.class);
-        Log.d("loadStudents:", "load done");
+       // Log.d("loadStudents:", "load done");
         Bundle args = new Bundle();
         args.putSerializable("STUD", Students);
         i.putExtra("STUDBUNDLE",args);
-//        i.putExtra("ID", ID);
-//        startActivity(i);
-//        finish();
     }
 }
 
