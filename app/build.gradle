@@ -38,9 +38,9 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta3'
     implementation 'androidx.recyclerview:recyclerview:1.1.0-rc01'
-    androidTestCompile 'com.jayway.android.robotium:robotium-solo:5.6.0'
-    androidTestCompile 'androidx.test:rules:1.1.1'
-    androidTestCompile 'junit:junit:4.12'
+    androidTestImplementation 'com.jayway.android.robotium:robotium-solo:5.6.0'
+    androidTestImplementation 'androidx.test:rules:1.1.1'
+    androidTestImplementation 'junit:junit:4.12'
 }
 
 apply plugin: 'com.google.gms.google-services'

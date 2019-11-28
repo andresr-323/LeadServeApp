@@ -259,14 +259,14 @@ public class ProgressActivity extends AppCompatActivity {
         expandableListView = (ExpandableListView) findViewById(R.id.tierExpandableListView);
         expandableListDetail = TierEListDataPump.getData(t1, t2, t3);
         ArrayList<String> s = new ArrayList<String>(expandableListDetail.keySet());
-        ArrayList<String> revArrayList = new ArrayList<String>();
-        for (int i = s.size() - 1; i >= 0; i--) {
+//        ArrayList<String> revArrayList = new ArrayList<String>();
+//        for (int i = s.size() - 1; i >= 0; i--) {
+//
+//            // Append the elements in reverse order
+//            revArrayList.add(s.get(i));
+//        }
 
-            // Append the elements in reverse order
-            revArrayList.add(s.get(i));
-        }
-
-        expandableListTitle = revArrayList;
+        expandableListTitle = s;
         expandableListAdapter = new TierExpandableListAdapter(this, expandableListTitle, expandableListDetail);
         expandableListView.setAdapter(expandableListAdapter);
         int x = Integer.parseInt(tier)-1;
