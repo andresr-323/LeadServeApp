@@ -59,7 +59,7 @@ public class ChannelAdapter extends RecyclerView.Adapter<ChannelAdapter.ChannelV
 
         public void bind(Channel channel) {
             this.channel = channel;
-            System.out.println("name " + userName);
+            System.out.println("username " + userName);
             if (userName.equals(channel.getName())) {
                 System.out.println("to: " + channel.getName());
                 name.setText(channel.getFrom());
