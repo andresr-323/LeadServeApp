@@ -45,17 +45,16 @@ public class TierExpandableListAdapter  extends BaseExpandableListAdapter {
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = layoutInflater.inflate(R.layout.tier_list_item, null);
         }
-        TextView expandedListTextView = (TextView) convertView.findViewById(R.id.status);
+        TextView expandedListTextView = convertView.findViewById(R.id.status);
         expandedListTextView.setText(expandedListText); //setting the status
         if(expandedListText.equals("Complete")){
-            //context.getResources().getColor(android.R.color.holo_red_dark);
             expandedListTextView.setTextColor(context.getResources().getColor(R.color.complete));
         } else if(expandedListText.equals("Under Review")){
             expandedListTextView.setTextColor(context.getResources().getColor(R.color.caution));
         } else{
             expandedListTextView.setTextColor(context.getResources().getColor(android.R.color.holo_red_dark));
         }
-        TextView expandedListTitle = (TextView) convertView.findViewById(R.id.tierChildTitle);  //to set the leftside title
+        TextView expandedListTitle = convertView.findViewById(R.id.tierChildTitle);  //to set the leftside title
         if(listPosition == 0){  //if it's tier one's sublist
             if(cnt == 0) {
                 expandedListTitle.setText(R.string.L1);
@@ -124,13 +123,6 @@ public class TierExpandableListAdapter  extends BaseExpandableListAdapter {
     @Override
     public View getGroupView(int listPosition, boolean isExpanded,
                              View convertView, ViewGroup parent) {
-//        if(listPosition == 0){
-//            listPosition = 2;
-//        }else if(listPosition == 1){
-//            listPosition = 1;
-//        }else if(listPosition == 2){
-//            listPosition = 0;
-//        }
         String listTitle = (String) getGroup(listPosition);
         if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) this.context.

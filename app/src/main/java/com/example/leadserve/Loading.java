@@ -60,7 +60,6 @@ public class Loading extends AppCompatActivity {
     public void onBackPressed() {
     }
 
-    //https://www.skysilk.com/blog/2018/how-to-connect-an-android-app-to-a-mysql-database/ Website im using rn??????????
     private void downloadstudentJSON(final String urlWebService, final String urlWebService2) {
 
         class DownloadStudentJSON extends AsyncTask<Void, Void, String[]> {

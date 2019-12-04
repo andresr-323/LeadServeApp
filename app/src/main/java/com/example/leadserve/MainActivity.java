@@ -39,9 +39,6 @@ public class MainActivity extends AppCompatActivity{
     public void OnLogin(View view) {
         String username = UsernameEt.getText().toString();
         String password = PasswordEt.getText().toString();
-        username = "andresrodriguez1337@gmail.com";
-        password = "password";
-
 
         String type = "login";
         if(username.equals("") && password.equals("")){

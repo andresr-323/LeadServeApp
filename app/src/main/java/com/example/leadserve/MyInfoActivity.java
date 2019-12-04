@@ -58,7 +58,6 @@ public class MyInfoActivity extends AppCompatActivity {
 
     }
 
-
     @Override
     public void onBackPressed() {
         finish();

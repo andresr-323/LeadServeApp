@@ -26,13 +26,13 @@ public class ExpandableListDataPump {
             cal2.setTime(new Date());
 
             //now compare the dates using methods on Calendar
-            if(cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR)) {
-                if((cal1.get(Calendar.MONTH) == cal2.get(Calendar.MONTH)) && (cal1.get(Calendar.MONTH) >= cal2.get(Calendar.MONTH)) && cal1.get(Calendar.DAY_OF_MONTH) >= cal2.get(Calendar.DAY_OF_MONTH)) {
-                    // the date falls in current month
+            if(cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR) || (cal1.get(Calendar.YEAR) > cal2.get(Calendar.YEAR))) {
+                if((cal1.get(Calendar.MONTH) == cal2.get(Calendar.MONTH)) && cal1.get(Calendar.DAY_OF_MONTH) >= cal2.get(Calendar.DAY_OF_MONTH)) {
+                    // the date falls in current month and the event is in the same month or greater
                     up.add(e);
                 // || (cal1.get(Calendar.YEAR) >= cal2.get(Calendar.YEAR)) might beneeded incase future next semester event?
-                }else if(!(cal1.get(Calendar.MONTH) <= cal2.get(Calendar.MONTH))){
-                    //the date doesnt fall in the current month but is set for a later month
+                }else if((cal1.get(Calendar.MONTH) >= cal2.get(Calendar.MONTH)) || (cal1.get(Calendar.YEAR) > cal2.get(Calendar.YEAR))){
+                    //the date doesnt fall in the current month but is set for a later month/year
                     fut.add(e);
                 }
             }
@@ -50,6 +50,7 @@ public class ExpandableListDataPump {
         for (Event e: fut) {
             future.add(e.getTitle() + "\t\t" + e.getDate());
         }
+        expandableListDetail.clear();
 
 
         expandableListDetail.put("Future Events", future);

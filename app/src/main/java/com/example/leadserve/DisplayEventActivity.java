@@ -23,7 +23,7 @@ public class DisplayEventActivity extends AppCompatActivity {
     TextView time;
     TextView location;
     TextView desc;
-    ImageView evImg;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

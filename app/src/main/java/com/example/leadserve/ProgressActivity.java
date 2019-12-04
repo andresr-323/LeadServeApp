@@ -87,14 +87,6 @@ public class ProgressActivity extends AppCompatActivity {
                     loadTierOne(s[0]);
                     loadTierTwo(s[1]);
                     loadTierThree(s[2]);
-//                    if(tier.equals("1"))
-//                        loadTierOne(s);
-//                    else if(tier.equals("2"))
-//                        loadTierTwo(s);
-//                    else if(tier.equals("3"))
-//                        loadTierThree(s);
-//                    else
-//                        Log.d("error in loadtier: ", "tier not found");
 
                 } catch (JSONException e) {
                     Log.d("error in loadtier: ", "tier not found");
@@ -201,16 +193,8 @@ public class ProgressActivity extends AppCompatActivity {
         t1.setCoachingProgram(obj.getInt("CoachingProgram"));
         t1.setLEAD1000(obj.getInt("LEAD1000"));
         t1.setShowcase(obj.getInt("Showcase"));
-//        t1.setCoachingVerf(obj.getInt("CoachingProgramVer"));
-//        t1.setLEADVerf(obj.getInt("LEAD1000Ver"));
-//        t1.setShowVer(obj.getInt("ShowcaseVer"));
 
         Log.d("loadt1:", "load done");
-//        ArrayList<tierOne> t = new ArrayList<>();
-//        t.add(t1);
-//        lv = findViewById(R.id.lvProg);
-//        tierAdapter itemsAdapter = new tierAdapter(t, this);
-//        lv.setAdapter(itemsAdapter);
 
     }
 
@@ -222,17 +206,8 @@ public class ProgressActivity extends AppCompatActivity {
         t2.setLegacyProjectProp(obj.getInt("LegacyProjectProposal"));
         t2.setLEAD2000(obj.getInt("LEAD2000"));
         t2.setShowcase(obj.getInt("Showcase"));
-//        t2.setFiveVerf(obj.getInt("FiveHourServiceReflectionVer"));
-//        t2.setLegacyVerf(obj.getInt("LegacyProjectProposalVer"));
-//        t2.setLEADVerf(obj.getInt("LEAD2000Ver"));
-//        t2.setShowcaseVerf(obj.getInt("ShowcaseVer"));
 
         Log.d("loadt2:", "load done");
-//        ArrayList<tierTwo> t = new ArrayList<>();
-//        t.add(t2);
-//        lv = findViewById(R.id.lvProg);
-//        tierTwoAdapter itemsAdapter = new tierTwoAdapter(t, this);
-//        lv.setAdapter(itemsAdapter);
 
     }
 
@@ -244,27 +219,12 @@ public class ProgressActivity extends AppCompatActivity {
         t3.setLEAD3000(obj.getInt("LEAD3000"));
         t3.setLeadershipPort(obj.getInt("LeadershipPortfolio"));
         t3.setShowcase(obj.getInt("Showcase"));
-//        t3.setLeadershipLegVerf(obj.getInt("LeadershipLegacyProjectVer"));
-//        t3.setLEADVerf(obj.getInt("LEAD3000Ver"));
-//        t3.setPortVerf(obj.getInt("LeadershipPortfolioVer"));
-//        t3.setShowcaseVerf(obj.getInt("ShowcaseVer"));
 
         Log.d("loadt3:", "load done");
-//        ArrayList<tierThree> t = new ArrayList<>();
-//        t.add(t3);
-//        lv = findViewById(R.id.lvProg);
-//        tierThreeAdapter itemsAdapter = new tierThreeAdapter(t, this);
-//        lv.setAdapter(itemsAdapter);
 
         expandableListView = (ExpandableListView) findViewById(R.id.tierExpandableListView);
         expandableListDetail = TierEListDataPump.getData(t1, t2, t3);
         ArrayList<String> s = new ArrayList<String>(expandableListDetail.keySet());
-//        ArrayList<String> revArrayList = new ArrayList<String>();
-//        for (int i = s.size() - 1; i >= 0; i--) {
-//
-//            // Append the elements in reverse order
-//            revArrayList.add(s.get(i));
-//        }
 
         expandableListTitle = s;
         expandableListAdapter = new TierExpandableListAdapter(this, expandableListTitle, expandableListDetail);
@@ -276,9 +236,7 @@ public class ProgressActivity extends AppCompatActivity {
             @Override
             public void onGroupExpand(int groupPosition) {
                 //shows which dropdown has been selected and toggled/expanded
-//                Toast.makeText(getApplicationContext(),
-//                        expandableListTitle.get(groupPosition) + " List Expanded.",
-//                        Toast.LENGTH_SHORT).show();
+                //expandableListTitle.get(groupPosition); <- gives the header group on click
             }
         });
 
@@ -287,9 +245,6 @@ public class ProgressActivity extends AppCompatActivity {
             @Override
             public void onGroupCollapse(int groupPosition) {
                 //gives you the list that was uncollapsed
-//                Toast.makeText(getApplicationContext(),
-//                        expandableListTitle.get(groupPosition) + " List Collapsed.",
-//                        Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -298,14 +253,7 @@ public class ProgressActivity extends AppCompatActivity {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                 //gives you the exact item in the collapsed list chosen
-//                Toast.makeText(
-//                        getApplicationContext(),
-//                        expandableListTitle.get(groupPosition)
-//                                + " -> "
-//                                + expandableListDetail.get(
-//                                expandableListTitle.get(groupPosition)).get(
-//                                childPosition), Toast.LENGTH_SHORT
-//                ).show();
+                //expandableListDetail.get(expandableListTitle.get(groupPosition)).get(childPosition);
                 return false;
             }
         });

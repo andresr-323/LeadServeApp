@@ -111,8 +111,6 @@ public class TierEListDataPump{
             tier3.add("Not Complete");
         }
 
-//        expandableListDetail.put("Tier One Progress", tier1);
-//        expandableListDetail.put("Tier Two Progress", tier2);
         expandableListDetail.put("Tier Three Progress", tier3);
         expandableListDetail.put("Tier Two Progress", tier2);
         expandableListDetail.put("Tier One Progress", tier1);
