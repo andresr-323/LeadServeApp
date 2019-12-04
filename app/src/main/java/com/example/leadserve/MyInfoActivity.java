@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
-public class MyInfoActivity extends AppCompatActivity implements View.OnClickListener {
+public class MyInfoActivity extends AppCompatActivity {
     private String ID;
     private ArrayList<Student> Students;
     private FirebaseAuth mAuth;
@@ -39,8 +39,6 @@ public class MyInfoActivity extends AppCompatActivity implements View.OnClickLis
                 s = s1;
             }
         }
-        Button bt = findViewById(R.id.logoutBtn);
-        bt.setOnClickListener(this);
 
         TextView Name = findViewById(R.id.name);
         TextView tier = findViewById(R.id.tier);
@@ -60,13 +58,6 @@ public class MyInfoActivity extends AppCompatActivity implements View.OnClickLis
 
     }
 
-
-    @Override
-    public void onClick(View v) {
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
-    }
 
     @Override
     public void onBackPressed() {

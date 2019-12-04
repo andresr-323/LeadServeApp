@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -18,6 +17,7 @@ import android.widget.Spinner;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -29,8 +29,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class homepage extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    private ArrayList<Student> Students = new ArrayList();
-    private ArrayList<Event> Events = new ArrayList();
+    private ArrayList<Student> Students = new ArrayList<>();
+    private ArrayList<Event> Events = new ArrayList<>();
     private String ID;
     public Spinner spinner;
     private String tier;
@@ -50,12 +50,12 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
         setContentView(R.layout.activity_homepage);
         channels.clear();
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Messaging");
         toolbar.setTitleTextColor(getResources().getColor(R.color.SLgold));
         setSupportActionBar(toolbar);
 
-        spinner = (Spinner) findViewById(R.id.navSpinner);
+        spinner = findViewById(R.id.navSpinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.spinner_list_item_array, R.layout.spinner_item);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         spinner.setAdapter(adapter);
@@ -75,10 +75,10 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
         Events = (ArrayList<Event>) events.getSerializable("EVEN");
 
         createRoom = findViewById(R.id.createRoom);
-        handleTierChannel();
+//        handleTierChannel();
         initUI();
-        getChannels();
-       // setChannelName();
+//        getChannels();
+//        setChannelName();
     }
 
     private void getChannels(){
@@ -89,6 +89,7 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
                     Log.e("Main", "Listen for channels failed");
                     return;
                 }else{
+                    channels.clear();
                     for(QueryDocumentSnapshot document: queryDocumentSnapshots){
                         String toName = "";
                         if(document.get("name") != null){
@@ -101,19 +102,29 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
                         //set tier channel
                         if (document.get("from") == null && document.get("name") == null){
                             String tier = document.get("tier").toString();
-                            channels.add(new Channel((tier)));
+                            if(!channels.contains(new Channel(tier))){
+                                channels.add(new Channel((tier)));
+                                adapter = new ChannelAdapter(channels, listener, name);
+                                channelsRV.setAdapter(adapter);
+                            }
                             //set sender
                         } else if (toName.equals(name)){
                             System.out.println("inside name");
-                            channels.add(new Channel(document.getId(), toName, from));
+                            if(!channels.contains(new Channel(document.getId(), toName, from))){
+                                channels.add(new Channel(document.getId(), toName, from));
+                                adapter = new ChannelAdapter(channels, listener, name);
+                                channelsRV.setAdapter(adapter);
+                            }
                             //set recipient
                         } else if (from.equals(name)){
                             System.out.println("inside from");
-                            channels.add(new Channel(document.getId(), toName, from));
+                            if(!channels.contains(new Channel(document.getId(), toName, from))){
+                                channels.add(new Channel(document.getId(), toName, from));
+                                adapter = new ChannelAdapter(channels, listener, name);
+                                channelsRV.setAdapter(adapter);
+                            }
                         }
                     }
-                    adapter = new ChannelAdapter(channels, listener, name);
-                    channelsRV.setAdapter(adapter);
                 }
             }
         });
@@ -146,12 +157,7 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
             }
         });
     }
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.menu_bar, menu);
-//
-//        return true;
-//    }
+
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -187,9 +193,12 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
                 spinner.setSelection(0);
                 break;
             case "Logout":
+                FirebaseAuth auth  = FirebaseAuth.getInstance();
+                auth.signOut();
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+                finish();
                 break;
             default:
                 break;
@@ -284,22 +293,21 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
         }
     }
 
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()) {
-//            // action with ID action_refresh was selected
-////            case R.id.action_refresh:
-////                Toast.makeText(this, "Refresh selected", Toast.LENGTH_SHORT).show();
-////                break;
-//            default:
-//                break;
-//        }
-//
-//        return true;
-//    }
-
     @Override
     public void onBackPressed() {
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+//        channels.clear();
+        getChannels();
+        handleTierChannel();
+    }
+    @Override
+    public void onPause() {
+        super.onPause();
+        channels.clear();
     }
 
 }

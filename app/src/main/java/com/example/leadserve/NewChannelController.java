@@ -138,16 +138,17 @@ public class NewChannelController extends AppCompatActivity {
                                             //need to check against selected user to see if channel exists
                                             System.out.println("inside check");
                                             if (task.isSuccessful()) {
+                                                System.out.println("task name");
                                                 for (QueryDocumentSnapshot document : task.getResult()) {
                                                     if (document.get("from").toString().equals(name)) {
                                                         System.out.println("channel already exists: sender");
                                                         exists = true;
                                                         createChannel(exists, nameText.getText().toString());
                                                         return;
-                                                    } else{
-                                                        createChannel(exists, nameText.getText().toString());
                                                     }
                                                 }
+                                                System.out.println("create channel");
+                                                createChannel(exists, nameText.getText().toString());
                                             }
                                         }
                                     });
@@ -163,14 +164,14 @@ public class NewChannelController extends AppCompatActivity {
                                                         exists = true;
                                                         createChannel(exists, nameText.getText().toString());
                                                         return;
-                                                    }else{
-                                                        createChannel(exists, nameText.getText().toString());
                                                     }
                                                 }
                                             }
                                         }
                                     });
-
+//
+//                                    System.out.println("create channel");
+//                                    createChannel(exists, nameText.getText().toString());
                                 }
                             });
                         }
