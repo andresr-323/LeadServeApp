@@ -1,8 +1,10 @@
 package com.example.leadserve;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,12 +27,6 @@ public class loginCheck extends AsyncTask<String,Void,String> {
     private String username;
     private String pass;
     private FirebaseAuth mAuth;
-//    private asyncCallBack mCallback;
-//
-//    public loginCheck(asyncCallBack callback, String x) {
-//
-//        mCallback = callback;
-//    }
 
     loginCheck(Context ctx, String username, String pass) {
         context = ctx;
@@ -113,6 +109,7 @@ public class loginCheck extends AsyncTask<String,Void,String> {
             i.putExtra("Name", s[2]+" "+s[3]);
             i.putExtra("vCode", s[4]);
             this.context.startActivity(i);
+            ((Activity) (context)).finish();
         } else if(result.equals("login not successful")){
             alertDialog.setMessage(result);
             alertDialog.show();

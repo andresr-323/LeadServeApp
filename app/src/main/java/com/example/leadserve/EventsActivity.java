@@ -76,8 +76,7 @@ public class EventsActivity extends AppCompatActivity {
             }
         }
 
-        //https://www.journaldev.com/9942/android-expandablelistview-example-tutorial used
-        expandableListView = (ExpandableListView) findViewById(R.id.expandableListView);
+        expandableListView = findViewById(R.id.expandableListView);
         if(expandableListDetail == null) {
             expandableListDetail = ExpandableListDataPump.getData(relEvents);
         }
@@ -90,9 +89,7 @@ public class EventsActivity extends AppCompatActivity {
             @Override
             public void onGroupExpand(int groupPosition) {
                 //shows which dropdown has been selected and toggled/expanded
-//                Toast.makeText(getApplicationContext(),
-//                        expandableListTitle.get(groupPosition) + " List Expanded.",
-//                        Toast.LENGTH_SHORT).show();
+                //expandableListTitle.get(groupPosition)
             }
         });
 
@@ -101,9 +98,8 @@ public class EventsActivity extends AppCompatActivity {
             @Override
             public void onGroupCollapse(int groupPosition) {
                 //gives you the list that was uncollapsed
-//                Toast.makeText(getApplicationContext(),
-//                        expandableListTitle.get(groupPosition) + " List Collapsed.",
-//                        Toast.LENGTH_SHORT).show();
+                // expandableListTitle.get(groupPosition)
+
 
             }
         });
@@ -112,14 +108,7 @@ public class EventsActivity extends AppCompatActivity {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                 //gives you the exact item in the collapsed list chosen
-//                Toast.makeText(
-//                        getApplicationContext(),
-//                        expandableListTitle.get(groupPosition)
-//                                + " -> "
-//                                + expandableListDetail.get(
-//                                expandableListTitle.get(groupPosition)).get(
-//                                childPosition), Toast.LENGTH_SHORT
-//                ).show();
+                // expandableListDetail.get(expandableListTitle.get(groupPosition)).get(childPosition)
                 int cnt = 0;
                 Event sel = new Event();
                 for(Event e: Events){

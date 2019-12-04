@@ -30,13 +30,12 @@ public class DisplayEventActivity extends AppCompatActivity {
         setContentView(R.layout.activity_display_event);
         //get the selected event object to display its data
         sel = (Event)getIntent().getSerializableExtra("event");
-        //Toast.makeText(this, "event name" + sel.getTitle(),Toast.LENGTH_SHORT).show();
         title = findViewById(R.id.displayTitle);
         date = findViewById(R.id.displayDate);
         time = findViewById(R.id.displayTime);
         location = findViewById(R.id.displayLocation);
         desc = findViewById(R.id.displayDescription);
-        //evImg = findViewById(R.id.displayEventImg);
+
         Toolbar tb = findViewById(R.id.toolbar);
         tb.setTitle(sel.getTitle());
         tb.setTitleTextColor(getResources().getColor(R.color.SLgold));

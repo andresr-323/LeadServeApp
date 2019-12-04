@@ -106,7 +106,7 @@ public class AppUITest {
         solo.waitForActivity(EventsActivity.class, 1000);
         solo.clickOnText("Future Events");
         solo.waitForActivity(EventsActivity.class, 1000);
-        solo.clickOnText("showcase");
+        solo.clickOnText("end year party");
         solo.assertCurrentActivity("Expected DisplayEventActivity", DisplayEventActivity.class);
         solo.waitForActivity(DisplayEventActivity.class, 1000);
         solo.goBack();
@@ -166,7 +166,6 @@ public class AppUITest {
         solo.clickOnView(solo.getView(R.id.message_text));
         solo.enterText(0,"This is Robotium testing out the messaging");
         solo.clickOnView(solo.getView(R.id.send_message));
-        solo.goBack();
         Assert.assertTrue(solo.searchText("This is Robotium testing out the messaging"));
 
     }
