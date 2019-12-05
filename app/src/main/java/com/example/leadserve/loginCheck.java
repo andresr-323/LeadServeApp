@@ -23,7 +23,7 @@ import java.net.URLEncoder;
 
 public class loginCheck extends AsyncTask<String,Void,String> {
     Context context;
-    AlertDialog alertDialog;
+    private AlertDialog alertDialog;
     private String username;
     private String pass;
     private FirebaseAuth mAuth;

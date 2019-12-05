@@ -14,12 +14,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.InputStream;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class DisplayEventActivity extends AppCompatActivity {
     Event sel;
     TextView title;
-    TextView date;
+    TextView datetext;
     TextView time;
     TextView location;
     TextView desc;
@@ -31,7 +35,7 @@ public class DisplayEventActivity extends AppCompatActivity {
         //get the selected event object to display its data
         sel = (Event)getIntent().getSerializableExtra("event");
         title = findViewById(R.id.displayTitle);
-        date = findViewById(R.id.displayDate);
+        datetext = findViewById(R.id.displayDate);
         time = findViewById(R.id.displayTime);
         location = findViewById(R.id.displayLocation);
         desc = findViewById(R.id.displayDescription);
@@ -40,10 +44,27 @@ public class DisplayEventActivity extends AppCompatActivity {
         tb.setTitle(sel.getTitle());
         tb.setTitleTextColor(getResources().getColor(R.color.SLgold));
 
+        //Input date in String format
+        String input = sel.getTime();
+        //Date/time pattern of input date
+        DateFormat df = new SimpleDateFormat("HH:mm");
+        //Date/time pattern of desired output date
+        DateFormat outputformat = new SimpleDateFormat("hh:mm aa");
+        Date date = null;
+        String output = null;
+        try{
+            //Conversion of input String to date
+            date= df.parse(input);
+            //old date format to new date format
+            output = outputformat.format(date);
+        }catch(ParseException pe){
+            pe.printStackTrace();
+        }
+
         new DisplayEventActivity.DownloadImageTask((ImageView) findViewById(R.id.displayEventImg)).execute(sel.getImgPath());
         title.setText("Event: " + sel.getTitle());
-        date.setText("Date: " + sel.getDate());
-        time.setText("Start time: " + sel.getTime());
+        datetext.setText("Date: " + sel.getDate());
+        time.setText("Start time: " + output);
         location.setText(sel.getCampus() + ", " +sel.getLocation());
         desc.setText("Description:\n" + sel.getDescription());
     }

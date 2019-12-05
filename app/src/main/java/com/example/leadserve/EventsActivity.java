@@ -33,7 +33,7 @@ import java.util.List;
 public class EventsActivity extends AppCompatActivity {
     String ID;
     String tier;
-    private ArrayList<Event> Events = new ArrayList();
+    private ArrayList<Event> Events = new ArrayList<>();
     private ArrayList<Event> relEvents = new ArrayList<>();
     ExpandableListView expandableListView;
     ExpandableListAdapter expandableListAdapter;

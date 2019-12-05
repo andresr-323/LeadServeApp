@@ -47,10 +47,10 @@ public class AppUITest {
     @Test
     public void testCorrectLogin() throws Exception {
         solo.unlockScreen();
-        solo.clickOnView(solo.getView(R.id.emailText));
+//        solo.clickOnView(solo.getView(R.id.passText));
+//        solo.clickOnView(solo.getView(R.id.emailText));
         solo.enterText(1, EMAIL);
-        solo.clickOnView(solo.getView(R.id.passText));
-        solo.enterText(0, PASSWORD);
+        solo.enterText(0,PASSWORD);
 
         solo.clickOnButton("login");
         solo.assertCurrentActivity("Expected Loading class", Loading.class);

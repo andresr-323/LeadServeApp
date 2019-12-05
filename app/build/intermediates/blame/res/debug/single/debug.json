@@ -268,10 +268,6 @@
         "source": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\src\\main\\res\\layout\\activity_my_info.xml"
     },
     {
-        "merged": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_messaging.xml.flat",
-        "source": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\src\\main\\res\\layout\\activity_messaging.xml"
-    },
-    {
         "merged": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_color_highlight_material.xml.flat",
         "source": "C:\\Users\\Rodriguez\\.gradle\\caches\\transforms-2\\files-2.1\\f8ccfb448ba3545203b2c9319e236e39\\appcompat-1.1.0\\res\\color-v23\\abc_color_highlight_material.xml"
     },
@@ -1514,10 +1510,6 @@
     {
         "merged": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
         "source": "C:\\Users\\Rodriguez\\.gradle\\caches\\transforms-2\\files-2.1\\f8ccfb448ba3545203b2c9319e236e39\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_list_pressed_holo_dark.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_content_messaging.xml.flat",
-        "source": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\src\\main\\res\\layout\\content_messaging.xml"
     },
     {
         "merged": "C:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_black_36dp.png.flat",

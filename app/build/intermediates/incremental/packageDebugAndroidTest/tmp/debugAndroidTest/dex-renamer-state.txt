@@ -1,7 +1,7 @@
-#Tue Dec 03 17:44:52 EST 2019
-base.0=C\:\\Users\\kb09515.AD.000\\Desktop\\LeadServeApp\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\out\\classes.dex
+#Wed Dec 04 01:34:08 EST 2019
+base.0=C\:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\out\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=C\:\\Users\\kb09515.AD.000\\Desktop\\LeadServeApp\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\out\\classes.dex
+base.1=C\:\\Users\\Rodriguez\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\out\\classes.dex

@@ -1440,7 +1440,6 @@ id linearLayout
 id listMode
 id listTitle
 id list_item
-id listviewMessaging
 id loginBtn
 id major
 id majorInp
@@ -1668,11 +1667,9 @@ layout activity_events
 layout activity_homepage
 layout activity_loading
 layout activity_main
-layout activity_messaging
 layout activity_my_info
 layout activity_progress
 layout content_main
-layout content_messaging
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

@@ -2,9 +2,12 @@ package com.example.leadserve;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewTreeObserver;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -45,6 +48,7 @@ public class MessagesActivity extends AppCompatActivity {
     CollectionReference thread;
     Context context;
     Toolbar toolbar;
+    private static int cnt = 0;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +60,7 @@ public class MessagesActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         from = intent.getExtras().getString("from");
+        toolbar.setTitle(from);
         name = intent.getExtras().getString("name");
         ID = intent.getExtras().getString("id");
         toId = "";
@@ -111,6 +116,7 @@ public class MessagesActivity extends AppCompatActivity {
     }
 
 
+
     private void showMessages(){
         orderMessages(new EventListener<QuerySnapshot>() {
             @Override
@@ -121,6 +127,7 @@ public class MessagesActivity extends AppCompatActivity {
                 }
                 List<Message> messages = new ArrayList<>();
                 for(QueryDocumentSnapshot document : queryDocumentSnapshots){
+                    cnt++;
                     if (document.getId() != null){
                         System.out.println("inside snapshot");
                         String content = document.get("content").toString();
@@ -139,7 +146,10 @@ public class MessagesActivity extends AppCompatActivity {
                     }
                 }
                 adapter = new MessageAdapter(messages, userID);
+                messageView.scrollToPosition(0);
                 messageView.setAdapter(adapter);
+                //messageView.smoothScrollToPosition(0);
+
             }
         });
     }
@@ -152,6 +162,25 @@ public class MessagesActivity extends AppCompatActivity {
         LinearLayoutManager manager = new LinearLayoutManager(context);
         manager.setReverseLayout(true);
         messageView.setLayoutManager(manager);
+
+        if (Build.VERSION.SDK_INT >= 11) {
+            messageView.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+                @Override
+                public void onLayoutChange(View v,
+                                           int left, int top, int right, int bottom,
+                                           int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                    if (bottom < oldBottom) {
+                        messageView.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                messageView.smoothScrollToPosition(0);
+                                //messageView.scrollToPosition(0);
+                            }
+                        }, 100);
+                    }
+                }
+            });
+        }
 
         send.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -175,6 +204,7 @@ public class MessagesActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<DocumentReference> task) {
                 send.setEnabled(true);
+                //messageView.smoothScrollToPosition(0);
             }
         });
 
