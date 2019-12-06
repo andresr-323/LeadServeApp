@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\ar06653\\Desktop\\LeadServeApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-bn\\values-bn.xml",
+            "outputFile": "C:\\Users\\ar06653\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-bn\\values-bn.xml",
             "map": [
                 {
                     "source": "C:\\Users\\ar06653\\.gradle\\caches\\transforms-2\\files-2.1\\c6ed24259e187418524151309c91ad64\\play-services-base-17.1.0\\res\\values-bn\\values.xml",
@@ -21,6 +21,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\ar06653\\.gradle\\caches\\transforms-2\\files-2.1\\92a1ebb9d79bc225dffaf89079b866b1\\jetified-play-services-basement-17.0.0\\res\\values-bn\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "210",
+                        "endOffsets": "457"
+                    },
+                    "to": {
+                        "startLines": "37",
+                        "startColumns": "4",
+                        "startOffsets": "3975",
+                        "endColumns": "210",
+                        "endOffsets": "4181"
+                    }
+                },
+                {
                     "source": "C:\\Users\\ar06653\\.gradle\\caches\\transforms-2\\files-2.1\\56b6cdfbd80af409835a31a4470c49f0\\core-1.1.0\\res\\values-bn\\values-bn.xml",
                     "from": {
                         "startLines": "2",
@@ -35,23 +52,6 @@
                         "startOffsets": "5581",
                         "endColumns": "100",
                         "endOffsets": "5677"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ar06653\\.gradle\\caches\\transforms-2\\files-2.1\\618fc01b4518c5fbefec3c02e8d7706c\\jetified-play-services-basement-17.0.0\\res\\values-bn\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "210",
-                        "endOffsets": "457"
-                    },
-                    "to": {
-                        "startLines": "37",
-                        "startColumns": "4",
-                        "startOffsets": "3975",
-                        "endColumns": "210",
-                        "endOffsets": "4181"
                     }
                 },
                 {

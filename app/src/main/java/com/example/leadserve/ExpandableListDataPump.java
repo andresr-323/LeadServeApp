@@ -40,13 +40,16 @@ public class ExpandableListDataPump {
 
         }
 
+
         List<String> upcoming = new ArrayList<String>();
+        upcoming.clear();
         for (Event e: up) {
             upcoming.add(e.getTitle() + "\t\t" + e.getDate());
         }
 
 
         List<String> future = new ArrayList<String>();
+        future.clear();
         for (Event e: fut) {
             future.add(e.getTitle() + "\t\t" + e.getDate());
         }

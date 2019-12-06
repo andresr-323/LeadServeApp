@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\ar06653\\Desktop\\LeadServeApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-in\\values-in.xml",
+            "outputFile": "C:\\Users\\ar06653\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-in\\values-in.xml",
             "map": [
                 {
                     "source": "C:\\Users\\ar06653\\.gradle\\caches\\transforms-2\\files-2.1\\56b6cdfbd80af409835a31a4470c49f0\\core-1.1.0\\res\\values-in\\values-in.xml",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ar06653\\.gradle\\caches\\transforms-2\\files-2.1\\618fc01b4518c5fbefec3c02e8d7706c\\jetified-play-services-basement-17.0.0\\res\\values-in\\values.xml",
+                    "source": "C:\\Users\\ar06653\\.gradle\\caches\\transforms-2\\files-2.1\\92a1ebb9d79bc225dffaf89079b866b1\\jetified-play-services-basement-17.0.0\\res\\values-in\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

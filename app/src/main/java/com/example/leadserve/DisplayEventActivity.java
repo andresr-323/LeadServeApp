@@ -69,9 +69,9 @@ public class DisplayEventActivity extends AppCompatActivity {
         title.setText(sel.getTitle());
         datetext.setText("Date: " + sel.getDate());
         time.setText("Start time: " + output);
-        tiers.setText("tiers: " + sel.getStringtiers());
+        tiers.setText("Tiers: " + sel.getStringtiers());
         Campus.setText("Campus: " + sel.getCampus());
-        location.setText("Location" + sel.getLocation());
+        location.setText("Location: " + sel.getLocation());
         desc.setText("Description:\n" + sel.getDescription());
     }
 

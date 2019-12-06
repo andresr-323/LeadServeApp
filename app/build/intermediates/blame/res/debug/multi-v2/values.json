@@ -1,42 +1,23 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\ar06653\\Desktop\\LeadServeApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\ar06653\\StudioProjects\\LeadServeApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ar06653\\Desktop\\LeadServeApp\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\ar06653\\StudioProjects\\LeadServeApp\\app\\src\\main\\res\\values\\colors.xml",
                     "from": {
-                        "startLines": "3,15,10,17,19",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "57,541,385,635,718",
-                        "endLines": "8,15,13,17,21",
-                        "endColumns": "12,90,12,79,12",
-                        "endOffsets": "377,627,533,710,820"
+                        "startLines": "6,5,7,4,2,3,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "246,204,288,157,57,105,331",
+                        "endColumns": "40,40,41,45,46,50,42",
+                        "endOffsets": "282,240,325,198,99,151,369"
                     },
                     "to": {
-                        "startLines": "832,838,839,843,3208",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "49736,50056,50146,50296,207787",
-                        "endLines": "837,838,842,843,3210",
-                        "endColumns": "12,89,12,78,12",
-                        "endOffsets": "50051,50141,50291,50370,207887"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ar06653\\.gradle\\caches\\transforms-2\\files-2.1\\618fc01b4518c5fbefec3c02e8d7706c\\jetified-play-services-basement-17.0.0\\res\\values\\values.xml",
-                    "from": {
-                        "startLines": "4,7",
-                        "startColumns": "0,0",
-                        "startOffsets": "238,401",
-                        "endColumns": "63,166",
-                        "endOffsets": "301,567"
-                    },
-                    "to": {
-                        "startLines": "727,781",
-                        "startColumns": "4,4",
-                        "startOffsets": "40359,44569",
-                        "endColumns": "67,166",
-                        "endOffsets": "40422,44731"
+                        "startLines": "322,323,346,347,348,349,358",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "14518,14559,16257,16299,16345,16392,17114",
+                        "endColumns": "40,40,41,45,46,50,42",
+                        "endOffsets": "14554,14595,16294,16340,16387,16438,17152"
                     }
                 },
                 {
@@ -59,22 +40,39 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ar06653\\Desktop\\LeadServeApp\\app\\src\\main\\res\\values\\strings.xml",
+                    "source": "C:\\Users\\ar06653\\StudioProjects\\LeadServeApp\\app\\build\\generated\\res\\google-services\\debug\\values\\values.xml",
                     "from": {
-                        "startLines": "5,19,20,21,25,2,1,22,13,17,14,18,24,12,16,27,26,3,4,23,15",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "241,956,998,1040,1269,65,17,1082,541,806,594,878,1198,472,737,1396,1328,119,177,1137,665",
-                        "endLines": "11,19,20,21,25,2,1,22,13,17,14,18,24,12,16,27,26,3,4,23,15",
-                        "endColumns": "19,40,40,40,57,52,46,53,51,70,69,76,69,67,67,54,66,56,62,59,70",
-                        "endOffsets": "466,992,1034,1076,1322,113,59,1131,588,872,659,950,1263,535,800,1446,1390,171,235,1192,731"
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,197,309,389,493,600,720,821",
+                        "endColumns": "141,111,79,103,106,119,100,77",
+                        "endOffsets": "192,304,384,488,595,715,816,894"
                     },
                     "to": {
-                        "startLines": "2,735,736,737,738,766,767,772,791,793,794,795,799,806,807,808,809,816,817,819,822",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "150,40856,40897,40938,40979,42903,42956,43475,45862,46056,46127,46197,46700,47435,47497,47559,47614,48564,48621,48762,48946",
-                        "endLines": "8,735,736,737,738,766,767,772,791,793,794,795,799,806,807,808,809,816,817,819,822",
-                        "endColumns": "19,40,40,40,57,52,46,53,51,70,69,76,69,61,61,54,66,56,62,59,70",
-                        "endOffsets": "369,40892,40933,40974,41032,42951,42998,43524,45909,46122,46192,46269,46765,47492,47554,47609,47676,48616,48679,48817,49012"
+                        "startLines": "792,798,800,801,802,803,804,818",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "45914,46588,46770,46850,46954,47061,47181,48684",
+                        "endColumns": "141,111,79,103,106,119,100,77",
+                        "endOffsets": "46051,46695,46845,46949,47056,47176,47277,48757"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ar06653\\StudioProjects\\LeadServeApp\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "3,15,10,17,19",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "57,541,385,635,718",
+                        "endLines": "8,15,13,17,21",
+                        "endColumns": "12,90,12,79,12",
+                        "endOffsets": "377,627,533,710,820"
+                    },
+                    "to": {
+                        "startLines": "832,838,839,843,3208",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "49736,50056,50146,50296,207787",
+                        "endLines": "837,838,842,843,3210",
+                        "endColumns": "12,89,12,78,12",
+                        "endOffsets": "50051,50141,50291,50370,207887"
                     }
                 },
                 {
@@ -113,40 +111,6 @@
                         "endLines": "260,558,559,560,568,569,570,683,4680",
                         "endColumns": "55,58,47,55,74,75,71,65,24",
                         "endOffsets": "11672,30461,30509,30565,31251,31327,31399,38148,311092"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ar06653\\Desktop\\LeadServeApp\\app\\src\\main\\res\\values\\dimens.xml",
-                    "from": {
-                        "startLines": "1",
-                        "startColumns": "4",
-                        "startOffsets": "17",
-                        "endColumns": "41",
-                        "endOffsets": "54"
-                    },
-                    "to": {
-                        "startLines": "557",
-                        "startColumns": "4",
-                        "startOffsets": "30365",
-                        "endColumns": "41",
-                        "endOffsets": "30402"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ar06653\\Desktop\\LeadServeApp\\app\\build\\generated\\res\\google-services\\debug\\values\\values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,197,309,389,493,600,720,821",
-                        "endColumns": "141,111,79,103,106,119,100,77",
-                        "endOffsets": "192,304,384,488,595,715,816,894"
-                    },
-                    "to": {
-                        "startLines": "792,798,800,801,802,803,804,818",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "45914,46588,46770,46850,46954,47061,47181,48684",
-                        "endColumns": "141,111,79,103,106,119,100,77",
-                        "endOffsets": "46051,46695,46845,46949,47056,47176,47277,48757"
                     }
                 },
                 {
@@ -207,20 +171,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ar06653\\Desktop\\LeadServeApp\\app\\src\\main\\res\\values\\colors.xml",
+                    "source": "C:\\Users\\ar06653\\.gradle\\caches\\transforms-2\\files-2.1\\92a1ebb9d79bc225dffaf89079b866b1\\jetified-play-services-basement-17.0.0\\res\\values\\values.xml",
                     "from": {
-                        "startLines": "6,5,7,4,2,3,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "246,204,288,157,57,105,331",
-                        "endColumns": "40,40,41,45,46,50,42",
-                        "endOffsets": "282,240,325,198,99,151,369"
+                        "startLines": "4,7",
+                        "startColumns": "0,0",
+                        "startOffsets": "238,401",
+                        "endColumns": "63,166",
+                        "endOffsets": "301,567"
                     },
                     "to": {
-                        "startLines": "322,323,346,347,348,349,358",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "14518,14559,16257,16299,16345,16392,17114",
-                        "endColumns": "40,40,41,45,46,50,42",
-                        "endOffsets": "14554,14595,16294,16340,16387,16438,17152"
+                        "startLines": "727,781",
+                        "startColumns": "4,4",
+                        "startOffsets": "40359,44569",
+                        "endColumns": "67,166",
+                        "endOffsets": "40422,44731"
                     }
                 },
                 {
@@ -243,7 +207,26 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ar06653\\Desktop\\LeadServeApp\\app\\src\\main\\res\\values\\leadserve_background.xml",
+                    "source": "C:\\Users\\ar06653\\StudioProjects\\LeadServeApp\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "5,19,20,21,25,2,1,22,13,17,14,18,24,12,16,27,26,3,4,23,15",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "241,956,998,1040,1269,65,17,1082,541,806,594,878,1198,472,737,1396,1328,119,177,1137,665",
+                        "endLines": "11,19,20,21,25,2,1,22,13,17,14,18,24,12,16,27,26,3,4,23,15",
+                        "endColumns": "19,40,40,40,57,52,46,53,51,70,69,76,69,67,67,54,66,56,62,59,70",
+                        "endOffsets": "466,992,1034,1076,1322,113,59,1131,588,872,659,950,1263,535,800,1446,1390,171,235,1192,731"
+                    },
+                    "to": {
+                        "startLines": "2,735,736,737,738,766,767,772,791,793,794,795,799,806,807,808,809,816,817,819,822",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "150,40856,40897,40938,40979,42903,42956,43475,45862,46056,46127,46197,46700,47435,47497,47559,47614,48564,48621,48762,48946",
+                        "endLines": "8,735,736,737,738,766,767,772,791,793,794,795,799,806,807,808,809,816,817,819,822",
+                        "endColumns": "19,40,40,40,57,52,46,53,51,70,69,76,69,61,61,54,66,56,62,59,70",
+                        "endOffsets": "369,40892,40933,40974,41032,42951,42998,43524,45909,46122,46192,46269,46765,47492,47554,47609,47676,48616,48679,48817,49012"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ar06653\\StudioProjects\\LeadServeApp\\app\\src\\main\\res\\values\\leadserve_background.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -312,6 +295,23 @@
                         "endLines": "3364,3371,3382,4780,4785",
                         "endColumns": "24,24,24,24,24",
                         "endOffsets": "216967,217352,217949,316564,316834"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ar06653\\StudioProjects\\LeadServeApp\\app\\src\\main\\res\\values\\dimens.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "17",
+                        "endColumns": "41",
+                        "endOffsets": "54"
+                    },
+                    "to": {
+                        "startLines": "557",
+                        "startColumns": "4",
+                        "startOffsets": "30365",
+                        "endColumns": "41",
+                        "endOffsets": "30402"
                     }
                 }
             ]

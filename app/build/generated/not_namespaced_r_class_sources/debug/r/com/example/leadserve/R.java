@@ -6319,9 +6319,10 @@ public final class R {
     public static final int notify_panel_notification_icon_bg=0x7f08009e;
     public static final int sl=0x7f08009f;
     public static final int sl_new_logo_background=0x7f0800a0;
-    public static final int sl_vector=0x7f0800a1;
-    public static final int tooltip_frame_dark=0x7f0800a2;
-    public static final int tooltip_frame_light=0x7f0800a3;
+    public static final int sl_newlogo=0x7f0800a1;
+    public static final int sl_vector=0x7f0800a2;
+    public static final int tooltip_frame_dark=0x7f0800a3;
+    public static final int tooltip_frame_light=0x7f0800a4;
   }
   public static final class id {
     public static final int ALT=0x7f090000;

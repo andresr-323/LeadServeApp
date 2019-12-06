@@ -90,6 +90,7 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
                     return;
                 }else{
                     channels.clear();
+                    handleTierChannel();
                     for(QueryDocumentSnapshot document: queryDocumentSnapshots){
                         String toName = "";
                         if(document.get("name") != null){
@@ -302,7 +303,7 @@ public class homepage extends AppCompatActivity implements AdapterView.OnItemSel
         super.onResume();
 //        channels.clear();
         getChannels();
-        handleTierChannel();
+       // handleTierChannel();
     }
     @Override
     public void onPause() {
