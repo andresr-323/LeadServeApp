@@ -25,6 +25,7 @@ public class Event implements Serializable {
     private String t1;
     private String t2;
     private String t3;
+    private String StringTiers;
 
 
     private final String URL = "http://52.45.183.203/eventImages/";
@@ -96,6 +97,7 @@ public class Event implements Serializable {
     }
     public void setTiers(String s){
         String[] res;
+        this.StringTiers = s;
         res = s.split(", ");
         if(res[0].equals("")){
             this.t1 = "0";
@@ -136,5 +138,9 @@ public class Event implements Serializable {
         }
 
         return s;
+    }
+
+    public String getStringtiers() {
+        return StringTiers;
     }
 }

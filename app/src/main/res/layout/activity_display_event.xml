@@ -21,6 +21,7 @@
         android:id="@+id/displayEventImg"
         android:layout_width="match_parent"
         android:layout_height="208dp"
+        android:layout_marginTop="25dp"
         android:contentDescription="EventLogo"
         app:srcCompat="@drawable/sl_vector" />
 
@@ -38,6 +39,16 @@
 
     <TextView
         android:id="@+id/displayTime"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/tier"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/Campus"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:gravity="center"/>

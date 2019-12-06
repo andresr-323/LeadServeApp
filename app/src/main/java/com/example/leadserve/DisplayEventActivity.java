@@ -27,6 +27,8 @@ public class DisplayEventActivity extends AppCompatActivity {
     TextView time;
     TextView location;
     TextView desc;
+    TextView tiers;
+    TextView Campus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,8 @@ public class DisplayEventActivity extends AppCompatActivity {
         title = findViewById(R.id.displayTitle);
         datetext = findViewById(R.id.displayDate);
         time = findViewById(R.id.displayTime);
+        tiers = findViewById(R.id.tier);
+        Campus = findViewById(R.id.Campus);
         location = findViewById(R.id.displayLocation);
         desc = findViewById(R.id.displayDescription);
 
@@ -62,10 +66,12 @@ public class DisplayEventActivity extends AppCompatActivity {
         }
 
         new DisplayEventActivity.DownloadImageTask((ImageView) findViewById(R.id.displayEventImg)).execute(sel.getImgPath());
-        title.setText("Event: " + sel.getTitle());
+        title.setText(sel.getTitle());
         datetext.setText("Date: " + sel.getDate());
         time.setText("Start time: " + output);
-        location.setText(sel.getCampus() + ", " +sel.getLocation());
+        tiers.setText("tiers: " + sel.getStringtiers());
+        Campus.setText("Campus: " + sel.getCampus());
+        location.setText("Location" + sel.getLocation());
         desc.setText("Description:\n" + sel.getDescription());
     }
 
